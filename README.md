@@ -2,7 +2,8 @@
 
 I will keep my CV updated in this directory.
 
-Meanwhile, you can check my publication list [here](http://inspirehep.net/author/profile/H.O.Silva.1).
+Meanwhile, you can check my publication list [here](http://inspirehep.net/author/profile/H.O.Silva.1). 
+Or maybe check out my [website](http://www.phy.olemiss.edu/~hosilva/).
 
 ## Question
 Why you sign your papers as "Hector O. Silva"?
