@@ -1,12 +1,13 @@
 # Hector O. Silva's CV
 
-I will keep my CV updated in this directory.
+Click [here](https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fhosilva%2Fhosilvacv&target=cv_hector.tex) 
+to generate a **pdf** of my CV, powered by [LaTeX.Online](https://latexonline.cc).
 
-Meanwhile, you can check my publication list [here](http://inspirehep.net/author/profile/H.O.Silva.1). 
-Or maybe check out my [website](http://www.phy.olemiss.edu/~hosilva/).
+You can see my publication list [here](http://inspirehep.net/author/profile/H.O.Silva.1). 
+If you are interested, check out my [website](http://www.phy.olemiss.edu/~hosilva/).
 
 ## Question
-Why you sign your papers as "Hector O. Silva"?
+*Why you sign your papers as "Hector O. Silva"?*
 
 People from Portuguese speaking languages tend to have long last names. 
 For instance, Dom Pedro I, the first emperor of the Brazilian Empire 

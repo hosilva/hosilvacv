@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Awards Honors Scholarships	cv_hector.tex	/^\\section{Awards, Honors \\& Scholarships}$/;"	s
+Book Chapters	cv_hector.tex	/^\\section{Book Chapters}$/;"	s
+Employment	cv_hector.tex	/^\\section{Employment}$/;"	s
+More Information	cv_hector.tex	/^\\section{More \\\\ Information}$/;"	s
+Organization	cv_hector.tex	/^\\section{Organization}$/;"	s
+Personal and Contact Information	cv_hector.tex	/^\\section{Personal and Contact Information}$/;"	s
+Publications Accepted or in Review	cv_hector.tex	/^\\section{Publications Accepted or in Review}$/;"	s
+Publications in Conference Proceedings	cv_hector.tex	/^\\section{Publications in Conference Proceedings}$/;"	s
+Research Interests	cv_hector.tex	/^\\section{Research Interests}$/;"	s
+Review Papers	cv_hector.tex	/^\\section{Review Papers}$/;"	s
