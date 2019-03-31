@@ -1,0 +1,1734 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% Simple LaTeX CV Template %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NOTE: If you find that it says                                     %%
+%%                                                                    %%
+%%                           1 of ??                                  %%
+%%                                                                    %%
+%% at the bottom of your first page, this means that the AUX file     %%
+%% was not available when you ran LaTeX on this source. Simply RERUN  %%
+%% LaTeX to get the ``??'' replaced with the number of the last page  %%
+%% of the document. The AUX file will be generated on the first run   %%
+%% of LaTeX and used on the second run to fill in all of the          %%
+%% references.                                                        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Don't like 10pt? Try 11pt or 12pt
+\documentclass[10pt]{article}
+\RequirePackage[T1]{fontenc}
+\usepackage{amssymb}
+
+% LaTeX will typeset using Computer Modern Roman, which a lot of
+% non-mathematicians and non-engineers won't like. Also, a few PDF
+% viewers may not render CMR very well. Instead, Times New Roman can
+% be used. That's what this package does.
+\usepackage{times}
+
+% The automated optical recognition software used to digitize resume
+% information works best with fonts that do not have serifs. This
+% command uses a sans serif font throughout. Uncomment both lines (or at
+% least the second) to restore a Roman font (i.e., a font with serifs).
+% (NOTE: This requires the times package above)
+%\renewcommand{\familydefault}{\sfdefault}
+
+% This is a helpful package that puts math inside length specifications
+\usepackage{calc}
+
+% This package helps LaTeX auto-hyphenate hyphenated words if you use
+% special hyphens. For example, bio\-/mimicry will properly hyphenate
+% ``mimicry'' if necessary.
+\usepackage[shortcuts]{extdash}
+
+% Layout: Puts the section titles on left side of page
+\reversemarginpar
+
+%
+%         PAPER SIZE, PAGE NUMBER, AND DOCUMENT LAYOUT NOTES:
+%
+% The next \usepackage line changes the layout for CV style section
+% headings as marginal notes. It also sets up the paper size as either
+% letter or A4. By default, letter was used. If A4 paper is desired,
+% comment out the letterpaper lines and uncomment the a4paper lines.
+%
+% As you can see, the margin widths and section title widths can be
+% easily adjusted.
+%
+% ALSO: Notice that the includefoot option can be commented OUT in order
+% to put the PAGE NUMBER *IN* the bottom margin. This will make the
+% effective text area larger.
+%
+% IF YOU WISH TO REMOVE THE ``of LASTPAGE'' next to each page number,
+% see the note about the +LP and -LP lines below. Comment out the +LP
+% and uncomment the -LP.
+%
+% IF YOU WISH TO REMOVE PAGE NUMBERS, be sure that the includefoot line
+% is uncommented and ALSO uncomment the \pagestyle{empty} a few lines
+% below.
+%
+
+%% Use these lines for letter-sized paper
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=1.3in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=0.8in,               % 1 inch margins
+            includemp]{geometry}
+
+% %% Use these lines for A4-sized paper
+% \usepackage[paper=a4paper,
+%            %includefoot, % Uncomment to put page number above margin
+%            marginparwidth=28.5mm,    % Length of section titles
+%            marginparsep=1.5mm,       % Space between titles and text
+%            margin=25mm,              % 25mm margins
+%            includemp]{geometry}
+
+%% More layout: Get rid of indenting throughout entire document
+\setlength{\parindent}{0in}
+
+% Provides special list environments and macros to create new ones
+\usepackage[shortlabels]{enumitem}
+
+% Simpler bibsections for CV sections
+% (thanks to natbib for inspiration)
+%
+% * For lists of references with hanging indents and no numbers:
+%
+%   \begin{bibsection}
+%       \item ...
+%   \end{bibsection}
+%
+% * For numbered lists of references (with hanging indents):
+%
+%   \begin{bibenum}
+%       \item ...
+%   \end{bibenum}
+%
+%   Note that bibenum numbers continuously throughout. To reset the
+%   counter, use
+%
+%   \restartlist{bibenum}
+%
+%   at the place where you want the numbering to reset.
+
+\makeatletter
+\newlength{\bibhang}
+\setlength{\bibhang}{1em}
+\newlength{\bibsep}
+ {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newlist{bibsection}{itemize}{3}
+\setlist[bibsection]{label=,leftmargin=\bibhang,%
+        itemindent=-\bibhang,
+        itemsep=\bibsep,parsep=\z@,partopsep=0pt,
+        topsep=0pt}
+\newlist{bibenum}{enumerate}{3}
+\setlist[bibenum]{label=[\arabic*],resume,leftmargin={\bibhang+\widthof{[999]}},%
+        itemindent=-\bibhang,
+        itemsep=\bibsep,parsep=\z@,partopsep=0pt,
+        topsep=0pt}
+\let\oldendbibenum\endbibenum
+\def\endbibenum{\oldendbibenum\vspace{-.6\baselineskip}}
+\let\oldendbibsection\endbibsection
+\def\endbibsection{\oldendbibsection\vspace{-.6\baselineskip}}
+\makeatother
+
+%% Reference the last page in the page number
+%
+% NOTE: comment the +LP line and uncomment the -LP line to have page
+%       numbers without the ``of ##'' last page reference)
+%
+% NOTE: uncomment the \pagestyle{empty} line to get rid of all page
+%       numbers (make sure includefoot is commented out above)
+%
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+%\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    {\it \arabic{page} of \protect\pageref*{LastPage}} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+% Finally, give us PDF bookmarks
+\usepackage{color,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{venetianred}{rgb}{0.78, 0.03, 0.08}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=Maroon,urlcolor=Plum,
+            anchorcolor=Maroon,citecolor=Maroon}
+
+\usepackage[anythingbreaks]{breakurl}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% HEADING AT TOP OF CURRICULUM VITAE
+
+% The title (name) with a horizontal rule under it
+% (optional argument typesets an object right-justified across from name
+%  as well)
+%
+% Usage: \makeheading{name}
+%        OR
+%        \makeheading[right_object]{name}
+%
+% Place at top of document. It should be the first thing.
+% If ``right_object'' is provided in the square-braced optional
+% argument, it will be right justified on the same line as ``name'' at
+% the top of the CV. For example:
+%
+%       \makeheading[\emph{Curriculum vitae}]{Your Name}
+%
+% will put an emphasized ``Curriculum vitae'' at the top of the document
+% as a title. Likewise, a picture could be included:
+%
+%   \makeheading[{\includegraphics[height=1.5in]{my_picture}}]{Your Name}
+%
+% the picture will be flush right across from the name. For this example
+% to work, make sure the extra set of curly braces is included. Also
+% makes ure that \usepackage{graphicx} is somewhere in the preamble.
+\newcommand{\makeheading}[2][]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+             {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+         \end{minipage}}
+
+%%% SECTION HEADINGS
+
+% The section headings. Flush left in small caps down pseudo-margin.
+%
+% Usage: \section{section name}
+\renewcommand{\section}[1]{\pagebreak[3]%
+    \vspace{1.3\baselineskip}%
+    \phantomsection\addcontentsline{toc}{section}{#1}%
+    \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\hyphenpenalty=10000\raggedright #1}}}%
+    \vspace{-\baselineskip}\par}
+
+%%% LISTS
+
+% This macro alters a list by removing some of the space that follows the list
+% (is used by lists below)
+\newcommand*\fixendlist[1]{%
+    \expandafter\let\csname preFixEndListend#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\def\csname end#1\endcsname{\csname preFixEndListend#1\endcsname\vspace{-0.6\baselineskip}}}
+
+% These macros help ensure that items in outer-type lists do not get
+% separated from the next line by a page break
+% (they are used by lists below)
+\let\originalItem\item
+\newcommand*\fixouterlist[1]{%
+    \expandafter\let\csname preFixOuterList#1\expandafter\endcsname\csname #1\endcsname
+    \expandafter\def\csname #1\endcsname{\let\oldItem\item\def\item{\pagebreak[2]\oldItem}\csname preFixOuterList#1\endcsname}
+    \expandafter\let\csname preFixOuterListend#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\def\csname end#1\endcsname{\let\item\oldItem\csname preFixOuterListend#1\endcsname}}
+\newcommand*\fixinnerlist[1]{%
+    \expandafter\let\csname preFixInnerList#1\expandafter\endcsname\csname #1\endcsname
+    \expandafter\def\csname #1\endcsname{\let\oldItem\item\let\item\originalItem\csname preFixInnerList#1\endcsname}
+    \expandafter\let\csname preFixInnerListend#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\def\csname end#1\endcsname{\csname preFixInnerListend#1\endcsname\let\item\oldItem}}
+
+% An itemize-style list with lots of space between items
+%
+% Usage:
+%   \begin{outerlist}
+%       \item ...    % (or \item[] for no bullet)
+%   \end{outerlist}
+\newlist{outerlist}{itemize}{3}
+    \setlist[outerlist]{label=\enskip\textbullet,leftmargin=*}
+    \fixendlist{outerlist}
+    \fixouterlist{outerlist}
+
+% An environment IDENTICAL to outerlist that has better pre-list spacing
+% when used as the first thing in a \section
+%
+% Usage:
+%   \begin{lonelist}
+%       \item ...    % (or \item[] for no bullet)
+%   \end{lonelist}
+\newlist{lonelist}{itemize}{3}
+    \setlist[lonelist]{label=\enskip\textbullet,leftmargin=*,partopsep=0pt,topsep=0pt}
+    \fixendlist{lonelist}
+    \fixouterlist{lonelist}
+
+% An itemize-style list with little space between items
+%
+% Usage:
+%   \begin{innerlist}
+%       \item ...    % (or \item[] for no bullet)
+%   \end{innerlist}
+\newlist{innerlist}{itemize}{3}
+    \setlist[innerlist]{label=\enskip\textbullet,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt}
+    \fixinnerlist{innerlist}
+
+% An environment IDENTICAL to innerlist that has better pre-list spacing
+% when used as the first thing in a \section
+%
+% Usage:
+%   \begin{loneinnerlist}
+%       \item ...    % (or \item[] for no bullet)
+%   \end{loneinnerlist}
+\newlist{loneinnerlist}{itemize}{3}
+    \setlist[loneinnerlist]{label=\enskip\textbullet,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt}
+    \fixendlist{loneinnerlist}
+    \fixinnerlist{loneinnerlist}
+
+%%% EXTRA SPACE
+
+% To add some paragraph space between lines.
+% This also tells LaTeX to preferably break a page on one of these gaps
+% if there is a needed pagebreak nearby.
+\newcommand{\blankline}{\quad\pagebreak[3]}
+\newcommand{\halfblankline}{\quad\vspace{-0.5\baselineskip}\pagebreak[3]}
+
+%%% FORMATTING MACROS
+
+% Provides a linked \doi{#1} that links doi:#1 to http://dx.doi.org/#1
+\usepackage{doi}
+% To change the text before the DOI, adjust this command
+%\renewcommand\doitext{doi:}
+
+% Provides a linked \url{#1} that doesn't require escape characters
+\usepackage{url}
+
+% You can adjust the style \url{} uses here:
+% (options are: same, rm, sf, tt; defaults to tt)
+\urlstyle{same}
+
+% For \email{ADDRESS}, links ADDRESS to the url mailto:ADDRESS
+% (uncomment to typeset the e\-/mail address in typewriter font;
+%  otherwise, will be typeset in the \urlstyle above)
+%\DeclareUrlCommand\emaillink{\urlstyle{tt}}
+\providecommand*\emaillink[1]{\nolinkurl{#1}}
+\providecommand*\email[1]{\href{mailto:#1}{\emaillink{#1}}}
+
+\providecommand\BibTeX{{B\kern-.05em{\sc i\kern-.025em b}\kern-.08em \TeX}}
+\providecommand\Matlab{\textsc{Matlab}}
+
+% Custom hyphenation rules for words that LaTeX has trouble with
+% \hyphenation{bio-mim-ic-ry bio-in-spi-ra-tion re-us-a-ble pro-vid-er Media-Wiki}
+
+\newcommand{\MYhref}[3][blue]{\href{#2}{\color{#1}{#3}}}
+%%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\makeheading{\sc Hector Okada da Silva}
+
+\section{Personal and Contact Information}
+
+% NOTE: Mind where the & separators and \\ breaks are in the following
+%       table. Table is one row made up of three parboxes. The left
+%       parbox has address info, the middle parbox has a vertical bar,
+%       and the right parbox has phone and electronic contact
+%       information.
+%
+% MACROS: \rcollength is the width of the right column of the table
+%             (adjust it to your liking; default is 1.85in).
+%         \spacewidth is width of area between left and right boxes.
+%
+\newlength{\rcollength}\setlength{\rcollength}{1.85in}%
+\newlength{\spacewidth}\setlength{\spacewidth}{20pt}
+%
+\begin{tabular}[t]{@{}p{\textwidth-\rcollength-\spacewidth}@{}p{\spacewidth}@{}p{\rcollength}}%
+
+% Address box
+\parbox{\textwidth-\rcollength-\spacewidth}{%
+{\it Name}: Hector Okada da Silva\\
+{\it Citizenship}: Brazilian\\ \\
+%
+\href{http://www.montana.edu}{Montana State University}\\
+\href{http://www.montana.edu/xgi/}{eXtreme Gravity Institute}\\
+\href{http://www.physics.montana.edu}{Department of Physics}\\
+Barnard Hall, Room 202\\
+Bozeman, MT 59717-3840 USA}
+&
+% Uncomment to add a vertical bar in middle of contact information
+% {\vrule width 0.5pt}
+% \parbox[m][5\baselineskip]{\spacewidth}{} &
+
+% Non-snail-mail contact information
+\hspace{-1cm}\parbox{1.6\rcollength}{%
+% \textit{Work:} +1-480-965-2899 \\
+% \textit{Fax:} +1-480-965-2751 \\
+% {E-mail:} \email{hector.oksilva@gmail.com}\\
+{E-mail:} \email{hector.okadadasilva@montana.edu}\\
+{Website:} \href{http://www.phy.olemiss.edu/~hosilva/}{www.phy.olemiss.edu/~hosilva}}
+
+\end{tabular}
+
+\section{Research Interests}
+
+\textbf{Classical gravity and theoretical astrophysics:}
+Classical aspects of relativistic gravity (general relativity and modified
+theories). Structure, stability and dynamics of neutron stars and black holes,
+including gravitational waves. Tests of gravity in the strong-field regime.
+Equation of state of neutron stars.
+
+\section{Employment}
+\href{http://www.montana.edu}{\textbf{Montana State University}},
+Bozeman, MT, USA
+
+\begin{outerlist}
+
+\item[]
+     {Department of Physics} \\
+     August 2017 -- {\it Ongoing}
+        \begin{innerlist}
+        \item Supervisor:
+        \href{http://www.physics.montana.edu/people/faculty/yunes-nicolas.html}
+       {Nicol\'as Yunes}
+        \end{innerlist}
+\end{outerlist}
+
+\section{Education}
+
+\href{http://www.olemiss.edu/}{\textbf{University Mississippi}},
+Oxford, MS, USA
+\begin{outerlist}
+
+\item[] PhD.,
+        \href{http://olemiss.edu/depts/physics_and_astronomy/}
+             {Department of Physics and Astronomy} \\
+             May 2017
+        \begin{innerlist}
+        \item Supervisor:
+              \href{http://www.phy.olemiss.edu/~berti/}
+                   {Emanuele Berti}
+        % \item Area of Study: Control Engineering
+        \end{innerlist}
+\end{outerlist}
+
+ \halfblankline
+
+\href{http://www.ufpa.br/}{\textbf{Federal University of Par\'a}},
+Bel\'em, PA, Brazil
+\begin{outerlist}
+
+\item[] M.S.,
+        \href{http://www.ppgf.ufpa.br}
+             {Graduate Program in Physics}, January 2011
+        \begin{innerlist}
+        \item Dissertation Title: \emph{Dynamical Casimir effect in 1+1 dimensions}
+        \item Supervisors:
+        \href{http://lattes.cnpq.br/6642002445572793}{Danilo T. Alves}
+        and
+        \href{http://www.if.ufrj.br/docentes/carlos-farina-de-souza/}{Carlos Farina}
+        \end{innerlist}
+
+\item[] B.S.,
+        \href{http://www.facfis.ufpa.br}
+             {Department of Physics}, December 2008
+        \begin{innerlist}
+        \item Thesis Title: \emph{Exact solution for the energy density inside a non-stationary cavity with an arbitrary initial field state and applications}
+        \item Supervisor:
+        \href{http://lattes.cnpq.br/6642002445572793}{Danilo T. Alves}
+        \end{innerlist}
+
+\end{outerlist}
+
+% % Add a little space to nudge next ``Ref'd Journal Publications'' marginpar
+% % down to make room for tall ``Submitted Journal Publications''
+% % marginpar. If there are enough submitted journal publications, this
+% % space will not be needed (and should be removed).
+% \vspace{0.1in}
+
+\section{Awards, Honors \& Scholarships}
+\restartlist{bibenum}
+
+\begin{bibenum}
+
+	\item {\emph{NAOJ Visiting Joint Research}} travel grant,
+	National Astronomical Observatory of Japan (2018).
+
+    \item {\emph{Dissertation Fellowship} -- Spring 2017},
+    University of Mississippi (2016).
+
+    \item \href{http://physics.olemiss.edu/hector-okada-da-silva-is-a-winner-of-the-2016-graduate-student-achievement-award/}{\emph{Graduate Achievement Award}},
+    University of Mississippi (2016).
+
+    \item \href{http://physics.olemiss.edu/sigma-pi-sigma/}{\emph
+    {Elected member of the Sigma Pi Sigma}}, the Physics Honor Society (2016).
+
+    \item \emph{The Blue Apple Award} [For best student talk at the \href{http://www.phys.ufl.edu/events/gcgm8/index.html}{8th Gulf Coast
+        Gravity Meeting}, University of Florida],
+        % , Feb. 27--28, 2015],
+    \href{https://www.aps.org/units/dgrav/}{American Physical Society Topical Group in Gravitation} (2015).
+
+    \item Summer Research Assistantship,
+    Graduate School, University of Mississippi (2015).
+
+    \item University of Mississippi, Department of Physics and Astronomy,
+    \emph{Zdravko Stipcevic Honors Fellowship}
+    (2012 -- ongoing).
+
+    \item National Council for Scientific and Technological Development (CNPq) Scholarship , (2009 -- 2011).
+
+    \item Foundation for Research Support of the State of Par\'a (FAPESPA) Scholarship,
+    (2008 -- 2009).
+
+    \item National Council for Scientific and Technological Development (CNPq) Scholarship , (2006 -- 2008).
+
+\end{bibenum}
+
+\section{Refereed Journal Publications}
+
+	As of March 2019, my publications have gathered a total of 904 citations and I have a 
+	\emph{h-index} of 13 according to the inSpire database. For the most up-to-date statistics 
+	see my \href{http://inspirehep.net/author/profile/H.O.Silva.1}{profile} in inSpire.
+	
+	\blankline
+
+\restartlist{bibenum}
+\begin{bibenum}
+
+    \item D. T. Alves, E. R. Granhen, H. O. Silva and M. G. Lima,
+    \emph{Quantum radiation force on the moving mirror of a cavity, with Dirichlet and Neumann boundary conditions for a vacuum, finite temperature, and a coherent state},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.81.025016}{Phys. Rev. D {\bf81} 025016 (2010)}.
+
+    \item D. T. Alves, E. R. Granhen, H. O. Silva and M. G. Lima,
+    \emph{Exact behavior of the energy density inside an one-dimensional oscillating cavity with a thermal state},
+    \href{http://www.sciencedirect.com/science/article/pii/S0375960110009503}{Phys. Lett. A {\bf374} 3899-3907 (2010)}
+    [\href{http://arxiv.org/abs/1002.2238}{arXiv:1002.2238}].
+
+    \item H. O. Silva and C. Farina,
+    \emph{Simple model for the dynamical Casimir effect for a static mirror with time-dependent properties},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.84.045003}{Phys. Rev. D {\bf84} 045003 (2011)}
+    [\href{http://arxiv.org/abs/1102.2238}{arXiv:1102.2238}].
+    \label{itm:robintd}
+
+    \item A. L. C. Rego, H. O. Silva, D. T. Alves and C. Farina,
+    \emph{New signatures of the dynamical Casimir effect in a superconducting circuit},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.025003}{Phys. Rev. D {\bf90} 025003 (2014)}
+    [\href{http://arxiv.org/abs/1410.2511}{arXiv:1405.3720}].
+
+    \item H. O. Silva, H. Sotani, E. Berti and M. Horbatsch,
+    \emph{Torsional oscillations of neutron stars in scalar-tensor theory of gravity},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.124044}{Phys. Rev. D {\bf90} 124044 (2014)}
+    [\href{http://arxiv.org/abs/1410.2511}{arXiv:1410.2511}].
+
+    \item H. O. Silva, C. F. B. Macedo, E. Berti and L. C. B. Crispino,
+    \emph{Slowly rotating anisotropic neutron stars in general relativity and scalar-tensor theory},
+    \href{http://iopscience.iop.org/article/10.1088/0264-9381/32/14/145008/meta}{Class. Quantum Grav. {\bf32} 145008 (2015)}
+    [\href{http://arxiv.org/abs/1411.6286}{arXiv:1411.6286}],
+    (Chosen as
+    \MYhref[venetianred]{http://iopscience.iop.org/collections}{\sc IOPSelect})
+    % (Chosen as \href{http://iopscience.iop.org/collections}{\sc IOPSelect}).
+    \label{itm:anisostar}
+
+    \item K. Glampedakis, G. Pappas, H. O. Silva and E. Berti,
+    \emph{Post-Tolman-Oppenheimer-Volkoff formalism for relativistic stars},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.92.024056}{Phys. Rev. D {\bf92} 024056 (2015)}
+    [\href{http://arxiv.org/abs/1504.02455}{arXiv:1504.02455}].
+
+    \item M. Horbatsch, H. O. Silva, D. Gerosa, P. Pani, E. Berti, L. Gualtieri
+    and U. Sperhake,
+    \emph{Tensor-multi-scalar theories: relativistic stars and 3+1 decomposition},
+    \href{http://iopscience.iop.org/article/10.1088/0264-9381/32/20/204001/meta;jsessionid=575DFA8E53663683D64E28DF82CE0294.c1}{Class. Quantum Grav.
+    {\bf32} 204001 (2015)}
+    [\href{http://arxiv.org/abs/1505.07462}{arXiv:1505.07462}],
+    (Chosen as
+    \MYhref[venetianred]{http://iopscience.iop.org/collections}{\sc IOPSelect})
+    \label{itm:multiscalar}
+
+    \item A. Maselli, H. O. Silva, M. Minamitsuji and E. Berti,
+    \emph{Slowly rotating black hole solutions in Horndeski gravity},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.92.104049}{Phys. Rev. D {\bf92} 104049 (2015)}
+    [\href{http://arxiv.org/abs/1508.03044}{arXiv:1508.03044}].
+    \label{itm:horndeski}
+
+    \item H. O. Silva, H. Sotani and E. Berti,
+    \emph{Low-mass neutron stars: universal relations, the nuclear symmetry energy and gravitational radiation},\\
+    \href{http://mnras.oxfordjournals.org/content/459/4/4378}{MNRAS {\bf459}
+    4378 (2016)}
+    [\href{http://arxiv.org/abs/1601.03407}{arXiv:1601.03407}]
+
+    \item A. Maselli, H. O. Silva, M. Minamitsuji and E. Berti,
+    \emph{Neutron stars in Horndeski gravity},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.93.124056}{Phys. Rev. D {\bf93} 124056 (2016)}
+    [\href{https://arxiv.org/abs/1603.04876}{arXiv:1603.04876}]
+
+    \item M. Minamitsuji and H. O. Silva,
+    \emph{Relativistic stars in scalar-tensor theories with disformal coupling},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.93.124056}{Phys. Rev. D {\bf93} 124041 (2016)}
+    [\href{https://arxiv.org/abs/1604.07742}{arXiv:1604.07742}]
+    \label{itm:disformal}
+
+    \item K. Glampedakis, G. Pappas, H. O. Silva and E. Berti,
+    \emph{Astrophysical application of the Post-Tolman-Oppenheimer-Volkoff formalism},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.94.044030}{Phys. Rev. D {\bf94} 044030 (2016)}
+    [\href{https://arxiv.org/abs/1606.05106}{arXiv:1606.05106}]
+    (Featured as {\color{venetianred}\sc Editors's Suggestion}).
+    \label{itm:astroptov}
+
+    \item K. Glampedakis, G. Pappas, H. O. Silva and E. Berti,
+    \emph{Post-Kerr black hole spectroscopy},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.96.064054}{Phys. Rev. D {\bf96} 064054 (2017)}
+    [\href{https://arxiv.org/abs/1706.07658}{arXiv:1706.07658}]
+    \label{itm:postkerr}
+
+    \item H. O. Silva and N. Yunes,
+    \emph{I-Love-Q to the extreme},
+    \href{http://iopscience.iop.org/article/10.1088/1361-6382/aa995a}{Class. Quantum Grav. {\bf35} 015005 (2017)}
+    [\href{https://arxiv.org/abs/1710.00919}{arXiv:1710.00919}]
+    
+    \item J. Alsing, H. O. Silva and E. Berti,
+    \emph{Evidence for a maximum mass cut-off in the neutron star mass distribution and constraints on the equation of state},
+    \href{https://academic.oup.com/mnras/article-abstract/478/1/1377/4987228?redirectedFrom=fulltext}{MNRAS {\bf478} 1377 (2018)}
+    [\href{https://arxiv.org/abs/1709.07889}{arXiv:1709.07889}]
+    
+    \item H. O. Silva, J. Sakstein, L. Gualtieri, T.~P. Sotiriou and E. Berti
+    \emph{Spontaneous scalarization of black holes and compact stars from a Gauss-Bonnet coupling},
+    \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.131104}{Phys. Rev. Lett. {\bf120} 131104 (2018)}
+    [\href{https://arxiv.org/abs/1711.02080}{arXiv:1711.02080}]
+    \label{itm:edgb_sca}
+    
+    \item H. O. Silva and N. Yunes,
+    \emph{Neutron star pulse profiles in scalar-tensor theories of gravity},
+    \href{http://iopscience.iop.org/article/10.1088/1361-6382/aa995a}{Phys. Rev. D {\bf99} 044034 (2019)}
+    [\href{https://arxiv.org/abs/1808.04391}{arXiv:1808.04391}]
+    
+    \item H. O. Silva, C. F. B. Macedo, T. P. Sotiriou, L. Gualtieri, 
+    	  J. Sakstein and E. Berti
+	\emph{Stability of scalarized black hole solutions in scalar-Gauss-Bonnet gravity},
+	\href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.99.064011}{Phys. Rev. D {\bf99} 064011 (2019)}   
+	[\href{https://arxiv.org/abs/1812.05590}{arXiv:1812.05590}] 
+
+\end{bibenum}
+
+\blankline
+
+\section{Publications Accepted or in Review}
+
+\begin{bibenum}
+
+    \item H. O. Silva and N. Yunes,
+    \emph{Neutron star x-ray burst oscillations as extreme gravity probes},
+    % \href{}{}
+    [\href{https://arxiv.org/abs/1902.10269}{arXiv:1902.10269}]
+    
+    \item C. F. B. Macedo, J. Sakstein, E. Berti, L. Gualtieri, H. O. Silva and T. P. Sotiriou
+    \emph{Self-interactions and Spontaneous Black Hole Scalarization}
+    % \href{}{}
+    [\href{https://arxiv.org/abs/1903.06784}{arXiv:1903.06784}]
+    
+    \item A. Saffer, H. O. Silva and N. Yunes
+    \emph{The exterior spacetime of relativistic stars in scalar-Gauss-Bonnet gravity}
+    [\href{https://arxiv.org/abs/1903.07779}{1903.07779}]
+    
+
+\end{bibenum}
+
+\blankline
+
+\section{Review Papers}
+
+\begin{bibenum}
+    \item E. Berti, [{\it 47 authors}], H. O. Silva, [{\it 5 authors}],
+    \emph{Testing general relativity with present and future astrophysical observations},
+    \href{http://iopscience.iop.org/article/10.1088/0264-9381/32/24/243001}{Class. Quantum Grav. {\bf32} 243001 (2015)}
+    [\href{http://arxiv.org/abs/1501.07274}{arXiv:1501.07274}].
+\end{bibenum}
+
+% \vspace{0.1in}
+\blankline
+
+\section{Publications in Conference Proceedings}
+
+\begin{bibenum}
+
+    \item D. T. Alves, E. R. Granhen, M. G. Lima, H. O. Silva and A. R. L. Rego,
+    \emph{Time evolution of the energy density inside a one-dimensional non-static cavity with a vacuum, thermal and a coherent state},
+    \href{http://iopscience.iop.org/article/10.1088/1742-6596/161/1/012032/meta}{J. Phys.: Conf. Ser. {\bf161} 012032 (2009)}
+    [\href{http://arxiv.org/abs/0903.1305}{arXiv:0903.1305}]
+    (Contribution to the proceeding of the
+    \emph{60 years of the Casimir effect}
+    conference).
+
+    \item C. Farina, H. O. Silva, A. L. C. Rego and D. T. Alves,
+    \emph{Time-dependent Robin boundary conditions in the dynamical Casimir effect},
+    \href{http://www.worldscientific.com/doi/abs/10.1142/S2010194512007428}{Int. J. Mod. Phys. Conf. Ser. {\bf14} 306 (2012)}
+    [\href{http://arxiv.org/abs/1201.3846}{arXiv:1201.3846}]
+    (Contribution to the proceeding of the
+    \emph{10th Quantum Field Theory Under the Influence of External Conditions}
+    conference).
+
+    \item H. O. Silva, A. Maselli, M. Minamitsuji and E. Berti,
+    \emph{Compact objects in Horndeski gravity},
+    \href{http://www.worldscientific.com/doi/abs/10.1142/S0218271816410066}{Int. J. Mod. Phys. D {\bf25} 1641006 (2016)}
+    [\href{http://arxiv.org/abs/1602.05997}{arXiv:1602.05997}]
+    (Contribution to the proceedings of the
+    \emph{3rd Amazonian Symposium on Physics and 5th NRHEP Network Meeting}
+    ).
+
+\end{bibenum}
+
+\blankline
+
+\section{Book Chapters}
+\restartlist{bibenum}
+\begin{bibenum}
+    \item A. L. C. Rego, D. T. Alves, E. R. Granhen, H. O. Silva, M. G. Lima and W. P. Pires,
+    \emph{The Dynamical Casimir Effect}, in
+    \emph{Trends in Physics - Festschrift in homage to Prof. Jos\'e
+    Maria Filardo Bassalo}. Eds. M. S. D. Cattani, L. C. B. Crispino, M. O. C. Gomes and A. F. S. Santoro, (Editora Livraria da F\'isica, S\~ao Paulo, 2009).
+\end{bibenum}
+
+\blankline
+
+\section{Media \& Press}
+\restartlist{bibenum}
+Some of my work has been featured in media and press:
+\\
+\begin{bibenum}
+
+    \item Claire Fullerton, \href{http://cqgplus.com/2015/10/14/gravity-and-scalar-fields-live-long-and-prosper/}{``Gravity and scalar fields: live long and prosper?''} \\
+        Invited contribution to \href{http://cqgplus.com}{\emph{CQG$+$}} based on publication \ref{itm:multiscalar},
+        October 14, 2015.
+
+    \item Rafael Rocha, \href{http://www.portal.ufpa.br/imprensa/noticia.php?cod=10864}{``Pesquisa em F\'isica ganha destaque em revista internacional''} \\
+        Interview for the Federal University of Par\'a website on publication
+        \ref{itm:anisostar},
+        September, 2015.
+
+    \item Claire Fullerton, \href{http://cqgplus.com/2015/09/23/spontaneous-scalarization-dead-or-alive/}{``Spontaneous scalarization: dead or alive?''} \\
+        Invited contribution to \href{http://cqgplus.com}{\emph{CQG$+$}} based on publication \ref{itm:anisostar},
+        September 23, 2015.
+\end{bibenum}
+
+\section{Conference, invited talks and 
+		colloquium presentations}
+
+\restartlist{bibenum}
+\begin{bibenum}
+
+	\item H. O. Silva,
+    \emph{Scalar fields and strong-field gravity: spontaneous scalarization of compact objects},
+    \textcolor{Aquamarine}{invited} talk at the Kavli Institute for Cosmological Physics, University of Chicago, USA (2019).
+    
+    \item H. O. Silva,
+    \emph{Illuminating the strong-field regime of gravity},
+    talk at \emph{RelAstro} at Montana State University, USA (2018).
+
+	\item H. O. Silva,
+    \emph{Illuminating the strong-field regime of gravity},
+    \textcolor{Aquamarine}{invited} talk at the National Astronomical Observatory of Japan, Japan (2018).
+    
+    \item H. O. Silva,
+    \emph{A f\'isica extrema da estrelas de n\^eutrons},
+    \textcolor{Aquamarine}{invited} talk at Universidade Federal do Par\'a, Brazil (2018).
+    
+    \item H. O. Silva,
+    \emph{Estrelas de n\^eutrons: laborat\'orios celestes para f\'isica fundamental},
+    \textcolor{Aquamarine}{invited} talk at Universidade Federal do Par\'a, Brazil (2018).
+    
+    \item H. O. Silva,
+    \emph{I-Love-Q to the extreme},
+    talk at \emph{RelAstro} at Montana State University, USA (2018).
+    
+    \item H. O. Silva,
+    \emph{Neutron star masses: from astro to fundamental physics},
+    talk at \emph{RelAstro} at Montana State University, USA (2017).
+
+    \item H. O. Silva,
+    \emph{Probing the strong-field regime of gravity with neutrons stars},
+    \textcolor{Aquamarine}{invited} talk at Montana State University, USA (2017).
+
+    \item H. O. Silva, K. Glampedakis, G. Pappas and E. Berti
+    \emph{Appplications of the post-Tolman-Oppenheimer-Volkoff formalism},
+    at the \emph{APS April Meeting 2017}
+    in Washington DC, USA (2017).
+
+    \item H. O. Silva, M. Minamitsuji
+    \emph{Relativistic stars in scalar-tensor theories with disformal coupling},
+    at the \emph{APS April Meeting 2017}
+    in Washington DC, USA (2017).
+
+    \item H. O. Silva,
+    \emph{Confronting scalar-tensor theories of gravity
+    against binary-pulsar observations},
+    at the \emph{II Physics Graduate Student Research Symposium}
+    in Oxford, USA (2016).
+
+    \item H. O. Silva,
+    \emph{Confronting scalar-tensor theories of gravity
+    against binary-pulsar observations},
+    at the \emph{II Physics Graduate Student Research Symposium}
+    in Oxford, USA (2016).
+
+    \item H. O. Silva,
+    \emph{Neutron stars in scalar-tensor theories of gravity},
+    \textcolor{Aquamarine}{invited} talk at Universidade de Lisboa
+    in Lisbon, Portugal (2016).
+
+    \item H. O. Silva,
+    \emph{Neutron stars in scalar-tensor theories of gravity},
+    \textcolor{Aquamarine}{invited} talk at Universidade de Aveiro
+    in Aveiro, Portugal (2016).
+
+    \item H. O. Silva,
+    \emph{Neutron stars in scalar-tensor theories of gravity},
+    \textcolor{Aquamarine}{invited} talk at Instituto Superior T\'ecnico
+    in Lisbon, Portugal (2016).
+
+    \item H. O. Silva,
+    \emph{Low-mass neutron stars: universal relations, the nuclear symmetry energy and gravitational radiation}
+    at the {APS April Meeting},
+    in Salt Lake City, USA (2016).
+
+    \item H. O. Silva,
+    \emph{Neutron stars as strong gravity probes},
+    \textcolor{Aquamarine}{invited} talk at Mississippi State University's Journal Club
+    in Starkville, USA (2015).
+
+    \item H. O. Silva, A. Maselli, M. Minamitsuji and E. Berti,
+    \emph{Slowly rotating black hole solutions in Horndeski gravity},
+    at the \emph{III Amazonian Symposium on Physics and V NRHEP Network Meeting}
+    in Bel\'em, Brazil (2015).
+
+    \item H. O. Silva, E. Berti, K. Glampedakis and G. Pappas,
+    \emph{Testing general relativity with neutron stars: a new
+    parametrized formalism},
+    at the \emph{UM Research Day}
+    in Oxford, USA (2015).
+
+    \item H. O. Silva,
+    \emph{No-hair theorems in Horndeski gravity},
+    at the \emph{Physics Graduate Student Research Symposium}
+    in Oxford, USA (2015).
+
+    \item H. O. Silva, E. Berti, K. Glampedakis and G. Pappas,
+    \emph{A post-TOV formalism for relativistic stars},
+    at the \emph{IV NRHEP Network Meeting}
+    in Rome, Italy (2015).
+
+    \item H. O. Silva,
+    \emph{Tests of strong gravity with neutron star},
+    at the \emph{(Non-)universal properties of neutron stars}
+    in Bremen, Germany (2015).
+
+    \item H. O. Silva, E. Berti, K. Glampedakis and G. Pappas,
+    \emph{A post-TOV formalism for relativistic stars},
+    at the \emph{8th Gulf Coast Gravity Meeting}
+    in Gainesville, USA (2015).
+
+    \item C. Farina and H. O. Silva,
+    \emph{Dynamical Casimir effect without moving mirrors},
+    at the \emph{V Week of the Federal University of Par\'a Graduate Program in Physics}
+    in Bel\'em, Brazil (2010).
+
+    \item J. S. S. J\'unior and H. O. Silva,
+    \emph{Zeta Functions and the Casimir effect},
+    at the \emph{IV Week of the Federal University of Par\'a Graduate Program in Physics}
+    in Bel\'em, Brazil (2009).
+
+    \item H. O. Silva,
+    \emph{Schwinger's method for calculating non-relativistic
+    propagators in quantum mechanics},
+    at the \emph{Journal Club}
+    in Bel\'em, Brazil (2009).
+
+    \item D. T. Alves, H. O. Silva and A. N. Braga,
+    \emph{Quantum vacuum effects},
+    at the \emph{Physics Freshman Week of Federal University of Par\'a}
+    in Bel\'em, Brazil (2008).
+
+    \item H. O. Silva and D. T. Alves,
+    \emph{Quantum field theory in spaces with boundaries
+    with emphasis on the dynamical Casimir effect},
+    at the \emph{XIV Seminar of Undergraduate Research of
+    Federal University of Par\'a}
+    in Bel\'em, Brazil (2008).
+
+    \item H. O. Silva and D. T. Alves,
+    \emph{Quantum field theory in spaces of boundaries},
+    at the \emph{XVIII Seminar of Undergraduate Research of
+    Federal University of Par\'a}
+    in Bel\'em, Brazil (2007).
+
+    \item H. O. Silva and D. T. Alves,
+    \emph{Quantum field theory in the presence of boundaries},
+    at the \emph{XVII Seminar of Undergraduate Research of
+    Federal University of Par\'a}
+    in Bel\'em, Brazil (2006).
+\end{bibenum}
+
+\section{Conference Posters}
+\restartlist{bibenum}
+
+\begin{bibenum}
+
+    \item K. Glampedakis, G. Pappas, H. O. Silva and E. Berti,
+    \emph{A post-TOV formalism for relativistic stars},
+    at the \emph{Compact Objects as Astrophysical and Gravitational Probes}
+    in Leiden, Netherlands (2015).
+
+    \item H. O. Silva, H. Sotani, E. Berti and M. Horbatsch,
+    \emph{Torsional oscillations of neutron stars in scalar-tensor theory},
+    at the \emph{GR@99}
+    in Bad Honnef, Germany (2014).
+
+    \item A. L. C. Rego, C. Farina, H. O. Silva and D. T. Alves,
+    \emph{Dynamical Casimir effect with time dependent Robin
+    boundary conditions in 3+1 dimensions},
+    at the \emph{Physics Meeting}
+    in Foz do Igua\c{c}u, Brazil (2010).
+
+    \item J. S. S. J\'unior and H. O. Silva,
+    \emph{Casimir effect with soft boundary conditions at finite temperature},
+    at the \emph{II Amazonian School on Quantum Theory and Applications}
+    in Bel\'em, Brazil (2010).
+
+    \item J. S. S. J\'unior and H. O. Silva,
+    \emph{Mass and temperature corrections to the Casimir effect},
+    at the \emph{XXVII Meeting of Physicists from North and Northeast}
+    in Bel\'em, Brazil (2009).
+
+    \item D. T. Alves, E. R. Granhen, H. O. Silva and M. G. Lima,
+    \emph{Quantum radiation force on the mirrors of a non-static cavity,
+    with Dirichlet and Neumann boundary conditions for a vacuuum,
+    finite Temperature and coherent state},
+    at the \emph{Workshop on Quantum Nonstationary Systems}
+    in Bras\'ilia, Brazil (2009).
+
+    \item J. S. S. J\'unior, H. O. Silva and D. T. Alves,
+    \emph{Casimir effect and lattice regularization},
+    at the \emph{V Undergraduate Research Journey of the Program of
+    Tutorial Education of Par\'a} in Bel\'em, Brazil (2009).
+
+    \item H. O. Silva, C. F. B. Macedo and L. C. B. Crispino,
+    \emph{Solution of the one-dimensional Schr\"odinger equation for a
+    particle in an infinite potential well in a discrete spacetime},
+    at the \emph{V Undergraduate Research Journey of the Program of
+    Tutorial Education of Par\'a} in Bel\'em, Brazil (2009).
+
+\end{bibenum}
+
+\blankline
+% \vspace{0.2in}
+
+% \section{Academic Service}
+
+% \begin{bibsection}
+
+%     \item \textbf{\emph{Committee for the Development of Biomimicry and
+%         Bio\-/inspired Research and Education Initiatives at ASU}}\\
+%         Chairman, Arizona State University. 2013.
+
+%     \item \textbf{\emph{Interdisciplinary Complexity Science Stduent
+%         Organization}}\\
+%         Founding faculty co\-/adviser, Arizona State University.
+%         Interdisciplinary graduate and undergraduate student group
+%         focused on discussion of research topics in complexity science.
+%         2013.
+%
+% \end{bibsection}
+%
+\blankline
+
+\section{Visits}
+\restartlist{bibenum}
+
+Long scientific visits:
+
+\halfblankline
+
+% \begin{bibsection}
+\begin{bibenum}
+
+	\item \href{https://www.nao.ac.jp/en/}{\textbf{National Astronomical Observatory of Japan}}
+	\hfill{September -- October 2018}\\
+	Visited the Division of Theoretical Astronomy of the National Astronomical Observatory of Japan 
+	and collaborated with Hajime Sotani.\\
+	Host: \href{http://inspirehep.net/author/profile/H.Sotani.1}{Hajime Sotani}.
+
+	\item \href{http://www.ufpa.br}{\textbf{Universidade Federal do Par\'a}}
+    \hfill{June 2018}\\
+        Visited the Departamento de F\'isica and the Faculdade de Ci\^encias of the Universidade Federal do 
+        Par\'a, Bel\'em and Salin\'opolis campuses. \\
+        Hosts: \href{http://inspirehep.net/author/profile/L.C.B.Crispino.1}{Luis C. B. Crispino} and
+        \href{https://caiomacedo.weebly.com/}{Caio F. B. Macedo}
+
+    \item \href{http://www.nottingham.ac.uk}{\textbf{University of Nottingham}}
+    \hfill{May -- July 2017}\\
+        Visited the University of Nottingham and collaborated with
+        Prof. Thomas P. Sotiriou. Collaboration resulted in
+        the preprint~\ref{itm:edgb_sca}. \\
+        Host: \href{http://thomassotiriou.wixsite.com/challenginggr}{Thomas P. Sotiriou}.
+
+    \item \href{tecnico.ulisboa.pt}{\textbf{Instituto Superior T\'ecnico}}
+    \hfill{April -- July 2016}\\
+        Visited the Gravitation at T\'ecnico
+        (\href{http://centra.tecnico.ulisboa.pt/network/grit/about/}{GRIT})
+        group, led by Prof. Vitor Cardoso. Collaboration resulted in the
+        publications \ref{itm:disformal} and \ref{itm:astroptov}.\\
+        Host: \href{http://centra.ist.utl.pt/~vitor/}{Vitor Cardoso}.
+
+    \item \href{tecnico.ulisboa.pt}{\textbf{Instituto Superior T\'ecnico}}
+    \hfill{May -- July 2015}\\
+        Visited the Gravitation at T\'ecnico
+        (\href{http://centra.tecnico.ulisboa.pt/network/grit/about/}{GRIT})
+        group, led by Prof. Vitor Cardoso. Collaboration resulted in the
+        publication \ref{itm:horndeski}.\\
+        Host: \href{http://centra.ist.utl.pt/~vitor/}{Vitor Cardoso}.
+
+    \item \href{www.ufrj.br}{\textbf{Federal University of Rio de Janeiro}}
+    \hfill{January -- July 2010}\\
+        I was an exchange student visiting the
+        \href{http://www.if.ufrj.br}{Physics Institute}.
+        I attended a graduate level special topics course on quantum vacuum
+        effects. Collaboration with the group of Prof. Carlos Farina
+        resulted in the publication \ref{itm:robintd}. \\
+        Host: \href{http://www.if.ufrj.br/docentes/carlos-farina-de-souza/}
+        {Carlos Farina}. \\
+\end{bibenum}
+
+% \vspace{0.1in}f
+
+\section{Mentoring}
+\restartlist{bibenum}
+
+% \begin{bibsection}
+\begin{bibenum}
+		\item \textbf{Reagan Cox}\\
+        Undergraduate student in physics, Montana State University, USA. \\
+        Research project: \emph{Neutron stars in massive scalar-tensor gravity}. \\
+        Primary adviser: Nicol\'as Yunes. \\
+        Period: 2017--\emph{ongoing}.
+        
+    \item \textbf{Tan\'isia de F\'atima de Moraes Cardoso}\\
+        Undergraduate student in physics, Federal University of Par\'a, Brazil. \\
+        Research project: \emph{Path integrals in quantum mechanics}. \\
+        Primary adviser: Silvana Perez. \\
+        Period: 2009--2010.
+
+    \item \textbf{Jocivaldo Siqueira da Silva J\'unior}\\
+        Undergraduate student in physics, Federal University of Par\'a, Brazil. \\
+        Research project: \emph{Casimir Effect: static and dynamical}. \\
+        Primary adviser: Danilo T. Alves. \\
+        Period: 2009--2011.
+\end{bibenum}
+
+\vspace{0.1in}
+
+% \end{bibsection}
+
+\section{Teaching Experience}
+
+\href{http://www.olemiss.edu/}{\textbf{University of Mississippi}},
+Oxford, MS, USA
+\begin{outerlist}
+
+\item[] \textit{Grader}%
+        \hfill{August -- December 2015}
+\begin{innerlist}
+\item Graded assignments for graduate level course in general
+relativity (PHYS~729).
+\item Main instructor: \href{http://www.phy.olemiss.edu/~luca/}{Luca Bombelli}.
+\end{innerlist}
+
+\item[] \textit{Grader}%
+        \hfill{August -- December 2015}
+\begin{innerlist}
+\item Graded assignments for introductory astronomy class (ASTR~103).
+\item Main instructor: James Hill.
+\end{innerlist}
+
+\item[] \textit{Teaching Assistant} \hfill{August 2012 -- July 2014}
+    \begin{innerlist}
+        \item PHYS~221 and 222: Laboratory Physics for Science and Engineering.
+        \begin{innerlist}
+            \item Undergraduate course in introductory laboratory
+            physics for science and engineering majors.
+            \item I worked as a teaching assistant of two sections
+            ($\sim$ 50 students) per semester during this period. I was
+            responsible for engaging the student in the laboratory activities and
+            grading their assignments (weekly experiment reports and tests). I
+            also served as a tutor (2 hrs/week) helping undergraduate students with
+            their classwork.
+            \item Laboratory Physicists:
+            \href{http://relativity.phy.olemiss.edu/~thomas/}{Thomas Jamerson}.
+        \end{innerlist}
+    \end{innerlist}
+
+\end{outerlist}
+
+\section{Professional Service}
+
+\textbf{Referee} \\
+I have served as a referee for the following scientific journals [where ($n$) 
+indicates the number of refereed manuscripts]:
+\blankline
+\vspace{0.25cm}
+\begin{innerlist}
+    \item \emph{Physical Review D} \dotfill\, (8),
+    \item \emph{General Relativity and Gravitation} \dotfill\, (2),
+    \item \emph{Physical Review Letters} \dotfill\, (2),
+    \item \emph{Universe} \dotfill\, (2),
+    \item \emph{International Journal of Modern Physics D} \dotfill\, (2),
+    \item \emph{Monthly Notices of the Royal Astronomical Society} \dotfill\, (1),
+    \item \emph{Physical Review E} \dotfill\, (1),
+    \item \emph{Modern Physics Letters A} \dotfill\, (1),
+    \item \emph{International Journal of Modern Physics E} \dotfill\, (1),
+    \item \emph{European Journal of Physics C} \dotfill\, (1),
+\end{innerlist}
+
+\blankline
+
+\textbf{Judging committees} \\
+I participated in the following undergraduate thesis defense:
+\restartlist{bibenum}
+\begin{bibenum}
+    \item {Tan\'isia de F\'atima de Moraes Cardoso}, \hfill{2010} \\
+        Undergraduate student in Physics, Federal University of Par\'a, \\
+        Title: \emph{Path integrals in quantum mechanics}.
+\end{bibenum}
+
+\vspace{0.1in}
+
+% \section{Professional Experience}
+
+% \href{http://www.asu.edu/}{\textbf{Arizona State University}},
+% Tempe, AZ
+% \begin{outerlist}
+
+%     \item[] \textit{Assistant Professor}%
+%             \hfill \textbf{August 2015 (upcoming)}
+%             \begin{innerlist}
+%                 \item Joint Appointment:
+%                     \begin{innerlist}
+%                         \item School of Computing, Informatics, and Decision Systems Engineering
+%                         \item School of Sustainability
+%                     \end{innerlist}
+
+%                 \item Graduate faculty in Industrial Engineering/Operations
+%                     Research, Sustainability, and Animal Behavior.
+
+%                 \item Interdisciplinary laboratory focus on decision
+%                     making and organization.
+%             \end{innerlist}
+
+%     \item[] \textit{Associate Research Scientist}%
+%             \hfill \textbf{August 2014 to present}\\
+%         \textit{Postdoctoral Scholar}%
+%             \hfill \textbf{July 2012 to August 2014}
+%             \begin{innerlist}
+%                 \item Supervisor:
+%                         \href{http://www.public.asu.edu/~spratt1/}%
+%                              {Professor Stephen C.~Pratt}
+
+%                 \item Novel application of sophisticated quantitative
+%                     analysis and modeling techniques to animals, with
+%                     social insects as a particular focus.
+
+%                 \item Development of new algorithms for robotics and
+%                     other autonomous systems based on animal behavior,
+%                     with focus on distributed decision making.
+
+%                 \item Supervision of graduate and undergraduate students
+%                     in engineering, computer science, and biology in
+%                     tasks related to biological analysis and modeling as
+%                     well as technological bio\-/mimetic design.
+%             \end{innerlist}
+
+% \end{outerlist}
+
+% \halfblankline
+
+% \href{http://www.osu.edu/}{\textbf{The Ohio State University}},
+% Columbus, OH
+% \begin{outerlist}
+
+%     \item[] \textit{Postdoctoral Researcher}%
+%             \hfill \textbf{September 2010 to June 2012}
+%             \begin{innerlist}
+%                 \item Funding:~\href{http://www.nfs.gov/}{National Science Foundation} Cyber\-/Physical Systems (ENG, \href{http://www.nsf.gov/div/index.jsp?div=eccs}{ECCS})
+%                 \begin{innerlist}
+%                     \item[$-$] ``Autonomous Driving in Mixed\-/Traffic Urban Environments''
+%                         (grant~\href{http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0931669}{\#0931669})
+%                     \item[$-$] Supervisor (co\-/PI):
+%                         \href{http://www.cse.ohio-state.edu/~paolo/}%
+%                              {Professor Paolo A.~G.~Sivilotti}
+%                     \item[$-$] PI:
+%                         \href{http://www.ece.ohio-state.edu/~umit/}%
+%                              {Professor \"{U}mit \"{O}zg\"{u}ner}
+%                 \end{innerlist}
+
+%                 \item Development of new approaches to software
+%                     verification in the context of hybrid\-/state and
+%                     hybrid\-/time dynamical systems.
+
+%                 \item Supervision of student design project for
+%                     novel vehicle\-/to\-/vehicle communications
+%                     systems to assist in adaptive cruise control.
+%             \end{innerlist}
+
+% \end{outerlist}
+
+% \halfblankline
+
+% \href{http://www.ni.com/}{\textbf{National Instruments}},
+% Austin, TX
+% \begin{outerlist}
+
+% \item[] \textit{Hardware R\&D Intern for Multifunction DAQ}%
+%         \hfill \textbf{June 2003 to September 2003}
+% \begin{innerlist}
+% \item Designed final verification test fixture for use with STC2 MIO
+%         products.
+% \item Designed and executed study of the effect of varying burn\-/in time
+%         on long\-/term drift of common industry voltage references.
+% \end{innerlist}
+
+% \item[] \textit{Hardware R\&D Intern for Multifunction DAQ}%
+%         \hfill \textbf{June 2002 to September 2002}
+% \begin{innerlist}
+% \item Designed and performed validation tests for 16-bit 800 kHz
+%         NI-6120 SMIO DAQ.
+
+% \item Designed high\-/quality source to use with NI-5411 arbitrary
+%         function generator.
+% \end{innerlist}
+
+% \end{outerlist}
+
+% \halfblankline
+
+% \textbf{\href{http://www.ibm.com/}{IBM} Network Storage},
+% Research Triangle Park, NC
+% \begin{outerlist}
+
+% \item[] \textit{Core Systems Software Developer for FlexNAS}%
+%         \hfill \textbf{June 2001 to September 2001}
+% \begin{innerlist}
+% \item Designed and implemented highly available multihop communications
+%         subsystem.
+% \item Participated in software development of various vital box
+%         services.
+% \end{innerlist}
+
+% \end{outerlist}
+
+% \halfblankline
+
+% \href{http://www.calltech.com/}{\textbf{CallTech Communications}},
+% Columbus, OH
+% \begin{outerlist}
+
+% \item[] \textit{Information Technology Systems Engineer}%
+%         \hfill \textbf{June 1997 to May 2001}
+% \begin{innerlist}
+% \item Responsible for the acquisition, setup, and administration of all
+%         hardware and software systems supporting
+%         \href{http://www.netwalk.com/}{NetWalk} Internet service and web
+%         presence provider.
+% \item Designed and implemented state\-/of\-/the\-/art open\-/source
+%         highly available load\-/balancing system supporting thousands of
+%         virtual servers.
+% \item Developed call\-/center software for clients such as
+%         CompuServe, AOL, and Priceline.
+% \end{innerlist}
+
+% \end{outerlist}
+
+% \halfblankline
+
+% \textbf{MegaLinx Communications}, Dublin, OH
+% \begin{outerlist}
+
+% \item[] \textit{Web Developer and Support Representative}%
+%         \hfill \textbf{June 1995 to May 1997}
+% \begin{innerlist}
+% \item Produced web content for commercial clients.
+% \item Assisted in administration of UltraSPARC, x86, 680x0, and PowerPC
+%         systems.
+% \item Developed multi\-/platform open\-/source file\-/sharing solution.
+% \item Provided technical support for Internet and web presence
+%         customers.
+% \end{innerlist}
+
+% \end{outerlist}
+
+\section{Professional Memberships}
+
+I am a member of the following organizations:
+%
+\begin{innerlist}
+\item \href{http://www.sbfisica.org.br}{Sociedade Brasileira de F\'isica}.
+\item \href{https://www.aps.org}{American Physical Society}.
+    \begin{innerlist}
+    \item \href{https://www.aps.org/units/dgrav/}{Division of Gravity}.
+    \end{innerlist}
+\item \href{http://www.sigmapisigma.org}{Sigma Pi Sigma}.
+\end{innerlist}
+
+\vspace{0.1in}
+
+\section{Outreach and Service}
+
+\href{www.ufpa.br}{\textbf{Federal University of Par\'a}}
+\hfill {2009 -- 2011}\\
+\textbf{Student representative}
+
+\begin{innerlist}
+    \item During the academic years of 2009--2010 and 2010--2011, I was one of the
+    two student representatives at the graduate program in physics at the
+    Federal University of Par\'a. My role was to act as an active voice representing the
+    students and participating in decisions concerning the graduate program.
+\end{innerlist}
+
+\halfblankline
+
+\textbf{2015 MS Region VII Science Fair}
+\hfill {March 2015}
+
+\begin{innerlist}
+    \item Judge of the science fair projects in the ``Lower Fair'' session.
+\end{innerlist}
+
+\halfblankline
+
+\href{www.olemiss.edu}{\textbf{University of Mississippi}},
+        \hfill {April 2015 -- January 2016}\\
+            \href{http://dos.orgsync.com/org/pgsa}{Physics Graduate Student Association (PGSA)}
+
+\begin{innerlist}
+    \item I am a founding member of the PGSA at University of Mississippi.
+    PGSA's goal is to estimulate the interaction among the physics student, through
+    events and social activities. During the period from April 2015 to January 2016
+    I served as vice-president.
+\end{innerlist}
+
+
+
+\vspace{0.1in}
+
+\section{Organization}
+
+\href{http://www.ufpa.br/ppgf/ippgf.html}
+{\textbf{1st School of the Graduate Program in Physics \\ of the Federal University of Par\'a}},
+\hfill{January 2011}
+
+\begin{innerlist}
+    \item Co-organized with Profs. Petrus A. A. J\'unior,
+    Danilo T. Alves and Lu\'is C. B. Crispino. This week-long school offered
+    mini-courses, at the advanced undergraduate level, on Electromagnetism,
+    Statistical Mechanics and Quantum Mechanics (and seminars on research
+    topics by the faculty of Federal University of Par\'a) for
+    university level students in the Bel\'em area, attracting participants
+    from four universities.
+\end{innerlist}
+
+\halfblankline
+
+\href{http://dos.orgsync.com/org/pgsa/ResearchSymposium2015}
+{\textbf{Physics Graduate Student Research Symposium}},
+\hfill{September 2015}
+
+\begin{innerlist}
+    \item Co-organized with other PGSA members. The event consisted of an afternoon
+    with short communications by the student body of the Department of Physics and
+    Astronomy, at University of Mississippi.
+\end{innerlist}
+
+\halfblankline
+
+\href{http://dos.orgsync.com/org/pgsa/UM_MSU_SYMP}
+{\textbf{1st Annual UM-MSU Joint Physics Research Symposium}},
+\hfill{February 2016}
+
+\begin{innerlist}
+    \item Co-organized with other PGSA members.
+    The symposium consisted of a day with short communications (and poster presentations)
+    by undergraduate and graduate students from the Departments of Physics
+    and Astronomy from both University of Mississippi and Mississippi State
+    University.
+\end{innerlist}
+
+\halfblankline
+
+\href{https://twitter.com/arXiv_BR}
+{\textbf{arXiv.BR}}
+\hfill{Since 2014}
+
+\begin{innerlist}
+    \item I maintain and run the Twitter account arxiv\_br since 2014. The 
+    account shares papers by Brazilian scientists (and foreigners at Brazilian institutions)
+    which have been posted to the arXiv the gr-qc, astro-ph and hep-th sections.
+    %
+    I also regularly post threads on the history of science in Brazil and the latest events 
+    in the field of gravitational physics in Portuguese.
+    %
+    As of March 2019, the account has 566 followers, many of whom are lay people and physics 
+    students.
+    %
+    The account regularly interacts with the Twitter accounts of major Brazilian institutions such 
+    as the \href{http://portal.cbpf.br/pt-br/en}{Centro Brasileiro de Pesquisas F\'isicas} 
+    and the \href{http://www.abc.org.br/}{Acad\^emia Brasileira de Ci\^encias}.
+\end{innerlist}
+
+
+\halfblankline
+
+\href{https://hosilva.github.io/memoria/}{\textbf{Mem\'oria da F\'isica Brasileira}}
+\hfill{Since March 2019}
+
+\begin{innerlist}
+    \item I maintain and run the website \emph{Mem\'oria da F\'isica Brasileira} (Memory of the Brazilian 
+    Physics).
+    %
+    In this website I write biographies of Brazilian physicists and accounts on events in 
+    the history of physics in Brazil. 
+    % 
+    I also keep a database of material related on this topic.
+    %
+    Currently (March 2019) the project is in its early stages. The goal is to ultimately have a website 
+    in the style of the \href{http://www-history.mcs.st-and.ac.uk/}{MacTutor History of Mathematics archive}
+    but focused on Brazilian physics.
+\end{innerlist}
+
+% \vspace{0.1in}
+
+% \section{Outreach \& Acitivities}
+
+% \href{http://www.olemiss.edu/}{\textbf{University of Mississippi}},
+% Oxford, MS, USA
+% \begin{outerlist}
+
+% \item[] \textit{Grader}%
+%         \hfill \textbf{August to December 2015}
+% \begin{innerlist}
+% \item Main instructor: James Hill
+% \item Graded assignments for introductory astronomy class (ASTR~103).
+% \end{innerlist}
+
+% \item[] \textit{Teaching Assistant} \hfill \textbf{August 2012 to July 2014}
+%     \begin{innerlist}
+%         \item PHYS~221 and 222: Laboratory Physics for Science and Engineering
+%         \begin{innerlist}
+%             \item Undergraduate course in introductory physics for science and
+%             engineering majors
+%             \item I served as a teaching assistant of two sections
+%             ($\sim$ 50 students) per semester during this period. I was
+%             responsible engaging the student in the laboratory activities and
+%             grading their assingments (experiment reports and tests)
+%             \item Laboratory Physicists: Thomas Jamerson
+%         \end{innerlist}
+%     \end{innerlist}
+
+% \end{outerlist}
+
+\vspace{0.1in}
+
+\section{Computational Skills}
+
+Computer programming and others:
+%
+\begin{innerlist}
+    \item Python, C++, Gnuplot, \LaTeX, HTML, CSS and Julia.
+\end{innerlist}
+
+\halfblankline
+
+Mathematical software:
+%
+\begin{innerlist}
+    \item Mathematica and Maple.
+\end{innerlist}
+
+\halfblankline
+
+Operating systems:
+%
+\begin{innerlist}
+    \item Microsoft Windows, Mac OSX and Linux.
+\end{innerlist}
+
+\blankline
+
+\section{Languages}
+
+Portuguese (Native), English (Fluent) and Spanish (Basic).
+
+% \section{References Available to Contact}
+
+% \href
+% {http://www.public.asu.edu/~spratt1/}
+% {\textbf{Dr.~Stephen C.~Pratt}}
+% (e\-/mail:~\href{mailto:stephen.pratt@asu.edu}{stephen.pratt@asu.edu}; phone:~+1-480-727-9425)
+% %
+% \begin{innerlist}
+%     \item Associate Professor,
+%         \href{http://sols.asu.edu/}{School of Life Sciences},
+%         \href{http://www.asu.edu/}{Arizona State University}
+
+%     \item[$\diamond$] School of Life Sciences, PO Box 874501, Tempe, AZ
+%         85287-4501
+
+%     \item[$\star$] \emph{Dr.~Pratt is my current postdoctoral supervisor.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \textbf{Dr.~Spring M.~Berman}
+% (e\-/mail:~\href{mailto:Spring.Berman@asu.edu}{Spring.Berman@asu.edu}; phone:~+1-480-965-4431)
+% %
+% \begin{innerlist}
+%     \item Assistant Professor,
+%         \href{http://sols.asu.edu/}{Mechanical and Aerospace Engineering},
+%         \href{http://www.asu.edu/}{Arizona State University}
+
+%     \item[$\diamond$] School for Engineering of Matter, Transport, and
+%         Energy, PO Box 876106, Tempe, AZ
+%         85287-6106
+
+%     \item[$\star$] \emph{Dr.~Berman is collaborator on my bio\-/mimicry work.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \href
+% {http://cosmos.asu.edu/}
+% {\textbf{Dr.~Paul C.~W.~Davies}}
+% (e\-/mail:~\href{mailto:Paul.Davies@asu.edu}{Paul.Davies@asu.edu}; phone:~+1-480-965-3240)
+% %
+% \begin{innerlist}
+%     \item Regents Professor and Director,
+%         \href{http://beyond.asu.edu/}{Beyond Center for Fundamental Concepts in Science},
+%         \href{http://www.asu.edu/}{Arizona State University}
+
+%     \item[$\diamond$] Beyond Center for Fundamental Concepts in Science,
+%         P.O. Box 871504, Tempe, AZ
+%         85287-1504
+
+%     \item[$\star$] \emph{Dr.~Davies is collaborator on my
+%         origins\-/of\-/life work.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \href
+% {http://emergence.asu.edu/}
+% {\textbf{Dr.~Sara Imari Walker}}
+% (e\-/mail:~\href{mailto:sara.i.walker@asu.edu}{sara.i.walker@asu.edu}; phone:~+1-480-727-2394)
+% %
+% \begin{innerlist}
+%     \item Assistant Professor,
+%         \href{http://sese.asu.edu/}{School of Earth and Space Exploration},
+%         \href{http://www.asu.edu/}{Arizona State University}
+
+%     \item[$\diamond$] ASU School of Earth and Space Exploration,
+%         PO Box 871404, Tempe, AZ
+%         85287-1404
+
+%     \item[$\star$] \emph{Dr.~Walker is collaborator on my
+%         origins\-/of\-/life work.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \textbf{Dr.~Pietro Michelucci}
+% (e\-/mail:~\href{mailto:pem@thinksplash.com}{pem@thinksplash.com}; phone: +1-571-235-3288)
+% \begin{innerlist}
+%     \item Principal,
+%         ThinkSplash LLC, Washington, DC
+
+%     \item[$\star$] \emph{I co\-/authored a chapter in the \emph{Handbook
+%         of Human Computation}, for which Dr.~Michelucci was the
+%         editor\-/in\-/chief.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \href
+% {http://www.cse.ohio-state.edu/~paolo/}
+% {\textbf{Dr.~Paolo A.~G.~Sivilotti}}
+% (e\-/mail:~\href{mailto:sivilotti.1@osu.edu}{sivilotti.1@osu.edu}; phone: +1-614-292-5835)
+% \begin{innerlist}
+%     \item Associate Professor,
+%         \href{http://www.cse.ohio-state.edu/}{Computer Science and Engineering},
+%         \href{http://www.osu.edu/}{The Ohio State University}
+
+%     \item[$\diamond$] 395 Dreese Laboratories, 2015 Neil Ave., Columbus,
+%         OH  43210
+
+%     \item[$\star$] \emph{Dr.~Sivilotti is my past postdoctoral
+%         supervisor.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \href
+% {http://www.cse.ohio-state.edu/~weide/}
+% {\textbf{Dr.~Bruce W.~Weide}}
+% (e\-/mail:~\href{mailto:weide.1@osu.edu}{weide.1@osu.edu}; phone:~+1-614-292-1517)
+% \begin{innerlist}
+%     \item Professor and Associate Chair,
+%         \href{http://www.cse.ohio-state.edu/}{Computer Science and
+%         Engineering}\\
+%         \href{http://www.osu.edu/}{The Ohio State University}
+
+%     \item[$\diamond$] 395 Dreese Laboratories, 2015 Neil Ave., Columbus,
+%         OH  43210
+
+%     \item[$\star$] \emph{Dr.~Weide is a co\-/PI on the NSF grant that
+%         funded my previous postdoctoral position.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \href
+% {http://hamilton-lab.wikidot.com/}
+% {\textbf{Dr.~Ian M.~Hamilton}}
+% (e\-/mail:~\href{mailto:hamilton.598@osu.edu}{hamilton.598@osu.edu}; phone:~+1-614-292-9147)
+% %
+% \begin{innerlist}
+%     \item Assistant Professor,
+%         \href{http://eeob.osu.edu/}{Evolution, Ecology, and Organismal Biology}
+%         and
+%         \href{http://www.math.ohio-state.edu/}{Mathematics}\\
+%         \href{http://www.osu.edu/}{The Ohio State University}
+
+%     \item[$\diamond$] 300 Aronoff Laboratory, 318 W.~12th Avenue,
+%         Columbus, OH  43210
+
+%     \item[$\star$] \emph{Dr.~Hamilton has been a valuable
+%         interdisciplinary resource to me.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \href
+% {http://www.ece.osu.edu/~passino/}
+% {\textbf{Dr.~Kevin M.~Passino}}
+% (e\-/mail:~\href{mailto:passino.1@osu.edu}{passino.1@osu.edu}; phone:~+1-614-312-2472)
+% %
+% \begin{innerlist}
+%     \item Professor,
+%         \href{http://www.ece.osu.edu/}{Electrical and Computer
+%         Engineering},
+%         \href{http://www.osu.edu/}{The Ohio State University}
+
+%     \item[$\diamond$] 205 Dreese Laboratories, 2015 Neil Ave., Columbus,
+%         OH  43210
+
+%     \item[$\star$] \emph{Dr.~Passino was my graduate adviser.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \href
+% {http://www.ece.osu.edu/~serrani/}
+% {\textbf{Dr.~Andrea Serrani}}
+% (e\-/mail:~\href{mailto:serrani.1@osu.edu}{serrani.1@osu.edu}; phone:~+1-614-292-4976)
+% %
+% \begin{innerlist}
+%     \item Associate Professor,
+%         \href{http://www.ece.osu.edu/}{Electrical and Computer Engineering}\\
+%         \href{http://www.osu.edu/}{The Ohio State University}
+
+%     \item[$\diamond$] 205 Dreese Laboratories, 2015 Neil Ave., Columbus,
+%         OH  43210
+
+%     \item[$\star$] \emph{Dr.~Serrani was a member of my doctoral
+%         committee.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \href
+% {http://feh.osu.edu/staff/view.html?UID=798}
+% {\textbf{Dr.~Richard J.~Freuler}}
+% (e\-/mail:~\href{mailto:freuler.1@osu.edu}{freuler.1@osu.edu}; phone: +1-614-688-0499)
+% \begin{innerlist}
+%     \item Professor of Practice,
+%         \href{http://mae.osu.edu/}{Mechanical and Aerospace Engineering}\\
+%         \href{http://www.osu.edu/}{The Ohio State University}
+
+%     \item[$\diamond$] 244 Hitchcock Hall, 2070 Neil Ave., Columbus, OH  43210
+
+%     \item[$\star$] \emph{Dr.~Freuler coordinates the Fundamentals of
+%         Engineering for Honors program in which I served as an
+%         instructor early in my academic career.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \href
+% {http://mae.osu.edu/people/staab.1}
+% {\textbf{Dr.~George H.~Staab}}
+% (e\-/mail:~\href{mailto:staab.1@osu.edu}{staab.1@osu.edu}; phone: +1-614-292-7920)
+% \begin{innerlist}
+%     \item Associate Professor,
+%         \href{http://mae.osu.edu/}{Mechanical and Aerospace Engineering}\\
+%         \href{http://www.osu.edu/}{The Ohio State University}
+
+%     \item[$\diamond$] W192 Scott Laboratory, 201 W.~19th Ave., Columbus, OH  43210
+
+%     \item[$\star$] \emph{Dr.~Staab is the faculty adviser for the OSU
+%         FIRST robotics and engineering outreach group of which I was a
+%         four\-/year member and team leader.}
+% \end{innerlist}
+
+% \halfblankline
+
+% \textbf{Dr.~Clayton Daigle}
+% (e\-/mail:~\href{mailto:Clayton.Daigle@silabs.com}{Clayton.Daigle@silabs.com}; phone: +1-512-532-5935)
+% \begin{innerlist}
+%     \item Mixed-Signal Engineer,
+%         \href{http://www.silabs.com/}{Silicon Laboratories}, Austin, TX
+
+%     \item[$\star$] \emph{Dr.~Daigle was my direct supervisor when I
+%         worked for National Instruments as an analog hardware R\&D
+%         engineer.}
+% \end{innerlist}
+
+% The ``More Info'' section may not be necessary; make sure it's short
+% so it doesn't prevent people from seeing references available to
+% contact.
+
+\blankline
+
+\section{More \\ Information}
+
+More information can be found in my website \\%
+\url{www.phy.olemiss.edu/~hosilva}.
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------%
+% The following is copyright and licensing information for
+% redistribution of this LaTeX source code; it also includes a liability
+% statement. If this source code is not being redistributed to others,
+% it may be omitted. It has no effect on the function of the above code.
+%----------------------------------------------------------------------%
+% Copyright (c) 2007, 2008, 2009, 2010, 2011 by Theodore P. Pavlic
+%
+% Unless otherwise expressly stated, this work is licensed under the
+% Creative Commons Attribution-Noncommercial 3.0 United States License. To
+% view a copy of this license, visit
+% http://creativecommons.org/licenses/by-nc/3.0/us/ or send a letter to
+% Creative Commons, 171 Second Street, Suite 300, San Francisco,
+% California, 94105, USA.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+% OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+% MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+% IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+% CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+% TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+% SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+%----------------------------------------------------------------------%
