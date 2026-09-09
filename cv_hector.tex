@@ -18,16 +18,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Don't like 10pt? Try 11pt or 12pt
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 \RequirePackage[T1]{fontenc}
 \usepackage{amssymb}
 \usepackage{microtype}
+\usepackage{etaremune}
 
 % LaTeX will typeset using Computer Modern Roman, which a lot of
 % non-mathematicians and non-engineers won't like. Also, a few PDF
 % viewers may not render CMR very well. Instead, Times New Roman can
 % be used. That's what this package does.
-\usepackage{times}
+% \usepackage{times}
 
 % The automated optical recognition software used to digitize resume
 % information works best with fonts that do not have serifs. This
@@ -159,8 +160,9 @@
                     \hfill \,}}
 
 % Finally, give us PDF bookmarks
-\usepackage{color,hyperref}
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{color}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage[dvipsnames]{xcolor}
 \definecolor{venetianred}{rgb}{0.78, 0.03, 0.08}
 \definecolor{aeired}{RGB}{173, 0, 0}
 \definecolor{aeiblu}{RGB}{1, 67, 95}
@@ -334,7 +336,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-\makeheading{\sc Hector Okada da Silva}
+\makeheading{\sc Dr.~Hector Okada da Silva}
 
 \section{Personal and Contact Information}
 
@@ -356,28 +358,27 @@
 % Address box
 \parbox{\textwidth-\rcollength-\spacewidth}{%
 \vspace{0.2cm}
-{Name}: Hector Okada da Silva\\
-{Citizenship}: Brazilian\\ \\
+{Name}: Hector Okada da Silva \\
+{Citizenship}: Brazilian \\ \\
 %
-% \href{https://aei.mpg.de}{Max Planck Institute for Gravitational Physics \\ (Albert Einstein Institute)}\\
-% Potsdam, D-14476, Germany \\ \\
-% Office: 1.33 \\
 \href{https://illinois.edu}{University of Illinois Urbana-Champaign}\\
 \href{https://physics.illinois.edu}{Department of Physics},
-Loomis Laboratory, \\
-1110 West Green Street, 61801 Urbana, Illinois, USA \\
+Loomis Laboratory \\
+1110 West Green Street, 61801 \\
+Urbana, IL, USA \\
 Office: 237B \\
-% Phone: {\sc +49 331 567-7253}
-\\
-{E-mail:} \email{hosilva@illinois.edu}\\ % | \email{hector.silva@aei.mpg.de}\\
-{ORCID:} \href{https://orcid.org/0000-0002-0066-9471}{0000-0002-0066-9471} \\
-{Website:}  \href{https://hosilva.web.illinois.edu}{hosilva.web.illinois.edu} \\
 }
 &
 % Uncomment to add a vertical bar in middle of contact information
 % {\vrule width 0.5pt}
 % \parbox[m][5\baselineskip]{\spacewidth}{} &
-
+\parbox{\textwidth-\rcollength-\spacewidth}{%
+    \vspace{.6cm}
+{E-mail:}   \email{hosilva@illinois.edu} \\
+{ORCID:}    \href{https://orcid.org/0000-0002-0066-9471}{0000-0002-0066-9471} \\
+{Website:}  \href{https://hosilva.web.illinois.edu}{hosilva.web.illinois.edu} \\
+}
+&
 % % Non-snail-mail contact information
 % \hspace{-2cm}\parbox{1.2\rcollength}{%
 % % \textit{Work:} +1-480-965-2899 \\
@@ -385,7 +386,6 @@ Office: 237B \\
 % {E-mail:} \email{hector.oksilva@gmail.com}\\
 % % {E-mail:} \email{hosilva@illinois.edu}\\
 % {Website:}  \href{http://www.phy.olemiss.edu/~hosilva/}{www.phy.olemiss.edu/~hosilva}} \\
-
 \end{tabular}
 
 \section{Research Interests}
@@ -402,43 +402,51 @@ Neutron star astrophysics and equation of state.
 \section{Employment}
 
 \href{http://www.illinois.edu}{\textbf{University of Illinois Urbana-Champaign}},
+\hfill
+November 2024--Present \\
 Urbana, IL, USA
-
+\vspace{-.15cm}
 \begin{outerlist}
 \item[]
-     {Department of Physics} \\
-     November 2024
+     {Department of Physics}
         \begin{innerlist}
         \item Position: Tenure-track Assistant Professor
         \end{innerlist}
 \end{outerlist}
 
-\blankline
+\halfblankline
 
-\href{https://aei.mpg.de}{\textbf{Max Planck Institute for Gravitational Physics (Albert Einstein Institute)}},
+\href{https://aei.mpg.de}{\textbf{Max Planck Institute for}}
+\hfill
+November 2020--November 2024 \\
+\textbf{\color{aeiblu}Gravitational Physics (Albert Einstein Institute)}, \\
 Potsdam, Germany
-
+\vspace{-.15cm}
 \begin{outerlist}
 \item[]
-     {Department of Astrophysical and Cosmological Relativity} \\
-     November 2020 -- November 2024
+     {Department of Astrophysical and Cosmological Relativity}
+     % November 2020 -- November 2024
         \begin{innerlist}
-        \item Position: Junior (2020 -- 2023), then Senior (2023 -- 2024) Scientist / Leibniz fellow
+        \item Position: Junior (2020--2023),
+            then Senior (2023--2024) Scientist/Leibniz Fellow
         \item Supervisor:
         \href{https://www.aei.mpg.de/alessandra-buonanno}
        {Alessandra Buonanno}
         \end{innerlist}
 \end{outerlist}
 
-\blankline
+\halfblankline
 
 \href{http://www.illinois.edu}{\textbf{University of Illinois Urbana-Champaign}},
+\hfill
+August 2019--October 2020
+\\
 Urbana, IL, USA
-
+\vspace{-.15cm}
 \begin{outerlist}
 \item[]
-     {Department of Physics} \\
-     August 2019 -- October 2020
+     {Department of Physics}
+     % August 2019 -- October 2020
         \begin{innerlist}
         \item Position: Post-doctoral researcher
         \item Supervisor:
@@ -447,16 +455,17 @@ Urbana, IL, USA
         \end{innerlist}
 \end{outerlist}
 
-\blankline
+\halfblankline
 
 \href{http://www.montana.edu}{\textbf{Montana State University}},
+\hfill
+August 2017--August 2019 \\
 Bozeman, MT, USA
-
+\vspace{-.15cm}
 \begin{outerlist}
-
 \item[]
-     {Department of Physics} \\
-     August 2017 -- August 2019
+     {Department of Physics}
+     % August 2017 -- August 2019
         \begin{innerlist}
         \item Position: Post-doctoral researcher
         \item Supervisor:
@@ -468,12 +477,15 @@ Bozeman, MT, USA
 \section{Education}
 
 \href{http://www.olemiss.edu/}{\textbf{University of Mississippi}},
+\hfill
+May 13, 2017 \\
 Oxford, MS, USA
+\vspace{-.15cm}
 \begin{outerlist}
-
 \item[] PhD.,
         \href{http://olemiss.edu/depts/physics_and_astronomy/}
-             {Department of Physics and Astronomy}, May 2017
+             {Department of Physics and Astronomy}
+             % , May 2017
         \begin{innerlist}
         \item Title: \emph{Compact objects in relativistic theories of gravity}
         \item Supervisor:
@@ -482,15 +494,16 @@ Oxford, MS, USA
         \end{innerlist}
 \end{outerlist}
 
- \halfblankline
+\halfblankline
 
-\href{http://www.ufpa.br/}{\textbf{Federal University of Par\'a}},
+\href{http://www.ufpa.br/}{\textbf{Federal University of Par\'a}}, \\
 Bel\'em, PA, Brazil
 \begin{outerlist}
-
+\vspace{-.15cm}
 \item[] M.Sc.,
         \href{http://www.ppgf.ufpa.br}
-             {Graduate Program in Physics}, February 2011
+             {Graduate Program in Physics}
+             \hfill February 21, 2011
         \begin{innerlist}
         \item Title: \emph{Dynamical Casimir effect in 1+1 dimensions}
         \item Supervisors:
@@ -498,16 +511,15 @@ Bel\'em, PA, Brazil
         and
         \href{http://www.if.ufrj.br/docentes/carlos-farina-de-souza/}{Carlos Farina}
         \end{innerlist}
-
 \item[] B.Sc.,
         \href{http://www.facfis.ufpa.br}
-             {Department of Physics}, December 2008
+             {Department of Physics}
+             \hfill March 13, 2009
         \begin{innerlist}
         \item Title: \emph{Exact solution for the energy density inside a non-stationary cavity with an arbitrary initial field state and applications}
         \item Supervisor:
         \href{http://lattes.cnpq.br/6642002445572793}{Danilo T. Alves}
         \end{innerlist}
-
 \end{outerlist}
 
 % % Add a little space to nudge next ``Ref'd Journal Publications'' marginpar
@@ -516,10 +528,9 @@ Bel\'em, PA, Brazil
 % % space will not be needed (and should be removed).
 % \vspace{0.1in}
 
-\section{Awards, Honors \& Scholarships}
-\restartlist{bibenum}
-
-\begin{bibenum}
+\section{Awards, Honors \\ \& Scholarships}
+% \restartlist{bibenum}
+\begin{enumerate}[topsep=0pt,partopsep=0pt]
     \item \href{https://gwic.ligo.org/thesis-prize.html}{\emph{The 2017 GWIC-Braccini Thesis Prize}},
         Gravitational Wave International Committee (2019).
 
@@ -532,52 +543,56 @@ Bel\'em, PA, Brazil
     \item \href{http://physics.olemiss.edu/sigma-pi-sigma/}{\emph
     {Elected member of the Sigma Pi Sigma}}, the Physics Honor Society (2016).
 
-    \item \emph{The Blue Apple Award} [For best student talk at the \href{http://www.phys.ufl.edu/events/gcgm8/index.html}{8th Gulf Coast
-        Gravity Meeting}, University of Florida],
-        % , Feb. 27--28, 2015],
-    \href{https://www.aps.org/units/dgrav/}{American Physical Society Topical Group in Gravitation} (2015).
+    \item \emph{The Blue Apple Award} from the
+    \href{https://www.aps.org/units/dgrav/}{American Physical Society Topical Group in Gravitation}
+    for best student talk at the
+    \href{http://www.phys.ufl.edu/events/gcgm8/index.html}{8th Gulf Coast Gravity Meeting},
+    University of Florida (2015).
 
     \item Summer Research Assistantship,
     Graduate School, University of Mississippi (2015).
 
     \item University of Mississippi, Department of Physics and Astronomy,
     \emph{Zdravko Stipcevic Honors Fellowship}
-    (2012 -- 2015).
+    (2012--2015).
 
-    \item National Council for Scientific and Technological Development (CNPq) Scholarship, (2009 -- 2011).
+    \item National Council for Scientific and Technological Development (CNPq) Scholarship, (2009--2011).
 
     \item Foundation for Research Support of the State of Par\'a (FAPESPA) Scholarship,
-    (2008 -- 2009).
+    (2008--2009).
 
-    \item National Council for Scientific and Technological Development (CNPq) Scholarship , (2006 -- 2008).
-\end{bibenum}
+    \item National Council for Scientific and Technological Development (CNPq) Scholarship, (2006--2008).
+\end{enumerate}
 
-\section{Research grants}
+\section{Research\\grants}
 \restartlist{bibenum}
-    \textbf{Current support} \vspace{.25cm}
-    \begin{bibenum}
-        \item Co-PI of the project entitled \emph{``GPU Validation and Benchmarking
-        of AsterX/CarpetX with CocalIDX Reader for Rotating Neutron Star and
+    \textbf{Current support}
+    % \vspace{.25cm}
+    % \begin{bibenum}
+    \begin{enumerate}
+        \item Co-PI of the project entitled {``GPU Validation~and~Benchmarking
+        of AsterX/ CarpetX with CocalIDX Reader for Rotating Neutron Star and
         Binary Neutron Star Initial Data''}. Total of 1,500 GPU Hours in NCSA DeltaAI.
         Estimated value of the award: \$1,581.57~USD. (March, 2026)
-    \end{bibenum}
+    \end{enumerate}
+    % \end{bibenum}
 
-    \vspace{.5cm}
-
-\restartlist{bibenum}
-    \textbf{Past support} \vspace{.25cm}
-    \begin{bibenum}
+% \restartlist{bibenum}
+    \textbf{Past support}
+    % \vspace{.25cm}
+    % \begin{bibenum}
+    \begin{enumerate}
         \item Fund from the
             \href{https://sites.google.com/view/gravity-theory-trust?pli=1}{Gravity
             Theory Trust}, to organize the workshop ``EFTs, Gravity, and Fluid
-            Dynamics: Progress, Challenges, and Emerging Opportunies'' between
-            December 16th to 18th, 2024. Total value of \$15,000~USD.
+            Dynamics: Progress, Challenges, and Emerging Opportunities'' between
+            December 16 to 18, 2024. Total value of \$15,000~USD.
 
         \item Fund from the
             \href{https://sites.google.com/view/gravity-theory-trust?pli=1}{Gravity
             Theory Trust}, to organize the workshop ``Connecting the dots: Toward
             inspiral-merger-ringdown gravitational waveforms beyond general
-            relativity'' between June 14th to 16th, 2023. Total value of
+            relativity'' between June 14 to 16, 2023. Total value of
             \$15,000~USD.
 
         \item Co-PI of the 2021 Illinois Blue Waters allocation project entitled
@@ -586,197 +601,277 @@ Bel\'em, PA, Brazil
         \$427,387~USD). (January 2021 to December 2021).
 
         \item NAOJ Visiting Joint Research travel grant, National Astronomical Observatory of Japan (September 21, 2018 to October, 21 2018).
-    \end{bibenum}
+    % \end{bibenum}
+    \end{enumerate}
 
-    \vspace{.5cm}
+    % \vspace{.5cm}
 
-\restartlist{bibenum}
-    \textbf{Sponsor for Visitor Grants/Travel Awards} \vspace{.25cm}
-    \begin{bibenum}
-    \item Sponsor for a Fulbright Fellowship to visit the University of Illinois Urbana-Champaign, awarded to
-        Carolina Loureiro Benone from the Federal University of Par\'a, Salin\'opolis, Brazil (2026).
-    \end{bibenum}
+% \restartlist{bibenum}
+    \textbf{Sponsor for Visitor Grants/Travel Awards}
+    % \vspace{.25cm}
+    % \begin{bibenum}
+    \begin{enumerate}
+    \item Sponsor for a \textbf{Fulbright Fellowship} awarded to Carolina Loureiro Benone from the Federal University of Par\'a, Salin\'opolis, Brazil, to visit the University of Illinois Urbana-Champaign (2026).
+    \end{enumerate}
+    % \end{bibenum}
+
 
 \section{Scientific Collaborations}
-\begin{innerlist}
-    \item Member of the \href{https://www.ligo.org/}{LIGO Scientific Collaboration} from 09/2022 to 12/2024.
+% \begin{innerlist}
+\begin{itemize}[partopsep=0pt,topsep=0pt]
+    \item \href{https://www.ligo.org/}{LIGO Scientific Collaboration}
+    \hfill November 2022--December 2024 \\
+    % \begin{itemize}
+    %    \item[]
+        I contributed to the AEI LSC group's work in tests of general
+         relativity with gravitational-wave observations, particularly with
+         the ``pSEOB'' pipeline.
+    % \end{itemize}
+    \item \href{https://www.et-gw.eu/}{Einstein Telescope Observation Science Board}
+    \hfill July 2022--April 2026 \\
+    % \begin{itemize}
+        % \item[]
+        I contributed to the ET OBS Division 8 -- Waveforms. I was the coordinator
+        of the section ``Waveforms in alternative theories of gravity'' for the
+        Einstein Telescope's Blue Book, that covers the observatory's science case.
+    % \end{itemize}
+\end{itemize}
+% \end{innerlist}
 
-    I contribute to the AEI LSC group's work in tests of general relativity with gravitational-wave observations,
-    in particular with the ``pSEOB'' pipeline.
-
-    \item Member of the \href{https://www.et-gw.eu/}{Einstein Telescope Observation Science Board} from 07/2022
-    to 04/2026.
-
-    I contribute to the ET OBS Division 8 -- Waveforms. I was the coordinator
-    of the section ``Waveforms in alternative theories of gravity'' for the
-    Einstein Telescope's Blue Book, that covers the observatory's science case.
-
-\end{innerlist}
-
-\section{Refereed Journal Publications}
-    As of July 2026, \textbf{I have a total of 53 published \emph{short-author}}
+\section{Publication summary}
+    As of September 2026, \textbf{I have a total of 53 published \emph{short-author}}
     research papers, \textbf{3} review articles, \textbf{3} papers in conference
-    proceedings, \textbf{2} book chapters, \textbf{1} manuscripts currently under review,
+    proceedings, \textbf{2} book chapters, \textbf{1} manuscript currently under review,
     and \textbf{1} large collaboration Blue Book.
     %
     This includes {\color{aeired}{\textbf{6}}} papers in the \textbf{\emph{Physical Review
     Letters}}, {\color{aeired}{\textbf{1}}} in \textbf{\emph{The Astrophysical Journal
     Letters}}, and {\color{aeired}{\textbf{1}}} invited article for the \textbf{\emph{Reviews
     of Modern Physics}}.
+
+    \halfblankline
+
+    My work has received a total of \textbf{7,176 citations}.
     %
-    My work has gathered a total of \textbf{6,963 citations}, and I have a
-    \textbf{\emph{h}-index of 35} according to the INSPIRE database.
+    My \textbf{h-index} is \textbf{35} according to the INSPIRE database and
+    \textbf{37} according to Google Scholar.
+    %
+    I have 3, 4, and 10 papers that have received more than 500, between 250--499,
+    and between 100--249 citations, respectively.
     %
     For the most up-to-date publication record see my profile in INSPIRE
     [\href{https://inspirehep.net/authors/1064872}{https://inspirehep.net/authors/1064872}].
 
 	\blankline
 
-\restartlist{bibenum}
-\begin{bibenum}
+    \textbf{Top five cited} -- Excluding ET collaboration Blue Book
+    % \restartlist{bibenum}
+    % \begin{etaremune}[itemsep=\bibsep,
+    %     partopsep=0pt,
+    %     leftmargin=0pt,
+    %     rightmargin=0pt,
+    %     itemindent=18pt]
+    \begin{enumerate}
+        \item
+        E. Berti, (47 authors), H. O. Silva, (5 more authors),
+        \emph{Testing general relativity with present and future astrophysical observations},
+        \href{http://iopscience.iop.org/article/10.1088/0264-9381/32/24/243001}{Class.~Quantum~Grav. {\bf32} 243001 (2015)}
+        [\href{http://arxiv.org/abs/1501.07274}{arXiv:1501.07274}]
+        \hfill (1,734 citations)
 
-    \item D. T. Alves, E. R. Granhen, H. O. Silva, and M. G. Lima,
-    \emph{Quantum radiation force on the moving mirror of a cavity, with Dirichlet and Neumann boundary conditions for a vacuum, finite temperature, and a coherent state},
-    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.81.025016}{Phys. Rev. D {\bf81} 025016 (2010)}.
+        \item
+        H. O. Silva, J. Sakstein, L. Gualtieri, T.~P. Sotiriou, and E. Berti,
+        \emph{Spontaneous scalarization of black holes and compact stars from a Gauss-Bonnet coupling},
+        \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.131104}{Phys.~Rev.~Lett. {\bf120} 131104 (2018)}
+        [\href{https://arxiv.org/abs/1711.02080}{arXiv:1711.02080}]
+        \hfill (689 citations)
 
-    \item D. T. Alves, E. R. Granhen, H. O. Silva, and M. G. Lima,
-    \emph{Exact behavior of the energy density inside an one-dimensional oscillating cavity with a thermal state},
-    \href{http://www.sciencedirect.com/science/article/pii/S0375960110009503}{Phys. Lett. A {\bf374} 3899-3907 (2010)}
-    [\href{http://arxiv.org/abs/1002.2238}{arXiv:1002.2238}].
+        \item
+        E. Berti, (59 authors), H. O. Silva, and (8 more authors),
+        \emph{Black hole spectroscopy: from theory to experiment,}
+        \href{https://iopscience.iop.org/article/10.1088/1361-6382/ae59e2}{Class.~Quantum~Grav. \textbf{43} 123001}
+        [\href{https://arxiv.org/abs/2505.23895}{arXiv:2505.23895}]
+        \halfblankline
+        \hfill (306 citations)
 
-    \item H. O. Silva and C. Farina,
-    \emph{Simple model for the dynamical Casimir effect for a static mirror with time-dependent properties},
-    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.84.045003}{Phys. Rev. D {\bf84} 045003 (2011)}
-    [\href{http://arxiv.org/abs/1102.2238}{arXiv:1102.2238}].
-    \label{itm:robintd}
+        \item
+        J. Alsing, H. O. Silva, and E. Berti,
+        \emph{Evidence for a maximum mass cut-off in the neutron star mass distribution and constraints on the equation of state},
+        \href{https://academic.oup.com/mnras/article-abstract/478/1/1377/4987228?redirectedFrom=fulltext}{MNRAS {\bf478} 1377 (2018)}
+        [\href{https://arxiv.org/abs/1709.07889}{arXiv:1709.07889}]
+        \hfill (279 citations)
 
-    \item A. L. C. Rego, H. O. Silva, D. T. Alves, and C. Farina,
-    \emph{New signatures of the dynamical Casimir effect in a superconducting circuit},
-    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.025003}{Phys. Rev. D {\bf90} 025003 (2014)}
-    [\href{http://arxiv.org/abs/1410.2511}{arXiv:1405.3720}].
+        \item
+        C. A. R. Herdeiro, E. Radu, H. O. Silva, T. P. Sotiriou, and N. Yunes,
+        \emph{Spin-induced scalarized black holes},
+        \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.011103}{Phys.~Rev. Lett. {\bf 126}, 011103 (2021)}
+        [\href{https://arxiv.org/abs/2009.03904}{arXiv:2009.03904}]
+        \hfill (263 citations)
+    \end{enumerate}
 
-    \item H. O. Silva, H. Sotani, E. Berti, and M. Horbatsch,
-    \emph{Torsional oscillations of neutron stars in scalar-tensor theory of gravity},
-    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.124044}{Phys. Rev. D {\bf90} 124044 (2014)}
-    [\href{http://arxiv.org/abs/1410.2511}{arXiv:1410.2511}].
+\section{Preprints}
 
-    \item H. O. Silva, C. F. B. Macedo, E. Berti, and L. C. B. Crispino,
-    \emph{Slowly rotating anisotropic neutron stars in general relativity and scalar-tensor theory},
-    \href{http://iopscience.iop.org/article/10.1088/0264-9381/32/14/145008/meta}{Class. Quantum Grav. {\bf32} 145008 (2015)}
-    [\href{http://arxiv.org/abs/1411.6286}{arXiv:1411.6286}],
-    (Chosen as
-    \MYhref[venetianred]{http://iopscience.iop.org/collections}{\sc IOPSelect})
-    % (Chosen as \href{http://iopscience.iop.org/collections}{\sc IOPSelect}).
-    \label{itm:anisostar}
+% \begin{bibenum}
+% \addtocounter{pubCounter}{-1}%
+% \begin{etaremune}[start=\value{pubCounter}]
+\newcounter{numPubs}
+\newcounter{pubCounter}
 
-    \item K. Glampedakis, G. Pappas, H. O. Silva, and E. Berti,
-    \emph{Post-Tolman-Oppenheimer-Volkoff formalism for relativistic stars},
-    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.92.024056}{Phys. Rev. D {\bf92} 024056 (2015)}
-    [\href{http://arxiv.org/abs/1504.02455}{arXiv:1504.02455}].
+\setcounter{numPubs}{60}
+\setcounter{pubCounter}{\value{numPubs}}
 
-    \item M. Horbatsch, H. O. Silva, D. Gerosa, P. Pani, E. Berti, L. Gualtieri,
-    and U. Sperhake,
-    \emph{Tensor-multi-scalar theories: relativistic stars and 3+1 decomposition},
-    \href{http://iopscience.iop.org/article/10.1088/0264-9381/32/20/204001/meta;jsessionid=575DFA8E53663683D64E28DF82CE0294.c1}{Class. Quantum Grav.
-    {\bf32} 204001 (2015)}
-    [\href{http://arxiv.org/abs/1505.07462}{arXiv:1505.07462}],
-    (Chosen as
-    \MYhref[venetianred]{http://iopscience.iop.org/collections}{\sc IOPSelect})
-    \label{itm:multiscalar}
+%\addtocounter{pubCounter}{-1}
+\begin{etaremune}[
+        start=\value{pubCounter},
+        topsep=0pt,
+        partopsep=0pt]
+    \item J. Zhang and H. O. Silva,
+    \emph{The crust of dark-matter admixed neutron stars: bulk properties and torsional oscillations,}
+    [\href{https://arxiv.org/abs/2606.27456}{arXiv:2606.27456}]
+    \setcounter{pubCounter}{\value{enumi}}
+\end{etaremune}
+% \end{bibenum}
 
-    \item A. Maselli, H. O. Silva, M. Minamitsuji, and E. Berti,
-    \emph{Slowly rotating black hole solutions in Horndeski gravity},
-    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.92.104049}{Phys. Rev. D {\bf92} 104049 (2015)}
-    [\href{http://arxiv.org/abs/1508.03044}{arXiv:1508.03044}].
-    \label{itm:horndeski}
+\section{Refereed Journal Publications}
+% \restartlist{bibenum}
+% \begin{bibenum}
+\addtocounter{pubCounter}{-1}
+\begin{etaremune}[
+        start=\value{pubCounter},
+        topsep=0pt,
+        partopsep=0pt]
 
-    \item H. O. Silva, H. Sotani, and E. Berti,
-    \emph{Low-mass neutron stars: universal relations, the nuclear symmetry energy and gravitational radiation},\\
-    \href{http://mnras.oxfordjournals.org/content/459/4/4378}{MNRAS {\bf459}
-    4378 (2016)}
-    [\href{http://arxiv.org/abs/1601.03407}{arXiv:1601.03407}]
+    \item H. O. Silva, G. Tambalo, K. Glampedakis, and K. Yagi,
+    \emph{Quasinormal modes and their excitation beyond general relativity. II: isospectrality loss in gravitational waveforms},
+    \href{https://journals.aps.org/prd/abstract/10.1103/lgfg-lvjn}{Phys. Rev. D {\bf 113}, 084012 (2026)}
+    [\href{https://arxiv.org/abs/2601.13411}{arXiv:2601.13411}]
 
-    \item A. Maselli, H. O. Silva, M. Minamitsuji, and E. Berti,
-    \emph{Neutron stars in Horndeski gravity},
-    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.93.124056}{Phys. Rev. D {\bf93} 124056 (2016)}
-    [\href{https://arxiv.org/abs/1603.04876}{arXiv:1603.04876}]
+    \item S. Saha and H. O. Silva,
+    \emph{Quasinormal modes of Kerr-Newman black holes: revisiting the Dudley-Finley approximation},
+    \href{https://journals.aps.org/prd/abstract/10.1103/2wc1-yntl}{Phys. Rev. D {\bf 113}, 064009 (2026)}
+    [\href{https://arxiv.org/abs/2510.05354}{arXiv:2510.05354}]
 
-    \item M. Minamitsuji and H. O. Silva,
-    \emph{Relativistic stars in scalar-tensor theories with disformal coupling},
-    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.93.124056}{Phys. Rev. D {\bf93} 124041 (2016)}
-    [\href{https://arxiv.org/abs/1604.07742}{arXiv:1604.07742}]
-    \label{itm:disformal}
-
-    \item K. Glampedakis, G. Pappas, H. O. Silva, and E. Berti,
-    \emph{Astrophysical application of the Post-Tolman-Oppenheimer-Volkoff formalism},
-    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.94.044030}{Phys. Rev. D {\bf94} 044030 (2016)}
-    [\href{https://arxiv.org/abs/1606.05106}{arXiv:1606.05106}]
+    \item Y. Gao, H-J. Kuan, C-J Xia, H. O. Silva, and M. Shibata,
+    \emph{Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries},
+    \href{https://journals.aps.org/prd/abstract/10.1103/nbk7-8kts}{Phys. Rev. D {\bf 112}, 123006 (2025)}
+    [\href{https://arxiv.org/abs/2509.00257}{arXiv:2509.00257}]
     (Featured as {\color{venetianred}\sc Editors's Suggestion}).
-    \label{itm:astroptov}
 
-    \item K. Glampedakis, G. Pappas, H. O. Silva, and E. Berti,
-    \emph{Post-Kerr black hole spectroscopy},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.96.064054}{Phys. Rev. D {\bf96} 064054 (2017)}
-    [\href{https://arxiv.org/abs/1706.07658}{arXiv:1706.07658}]
-    \label{itm:postkerr}
+    \item J. Streibert, H. O. Silva, and M. Zumalac\'arregui,
+    \emph{Eikonal gravitational-wave lensing in Einstein-aether theory},
+    \href{https://journals.aps.org/prd/abstract/10.1103/jrsp-1xll}{Phys. Rev. D {\bf 112}, 024073 (2025)}
+    [\href{https://arxiv.org/abs/2404.07782}{arXiv:2404.07782}]
 
-    \item H. O. Silva and N. Yunes,
-    \emph{I-Love-Q to the extreme},
-    \href{http://iopscience.iop.org/article/10.1088/1361-6382/aa995a}{Class. Quantum Grav. {\bf35} 015005 (2017)}
-    [\href{https://arxiv.org/abs/1710.00919}{arXiv:1710.00919}]
+    \item L. Pompili, E. Maggio, H. O. Silva, and A. Buonanno,
+    \emph{A parametrized spin-precessing inspiral-merger-ringdown waveform model for tests of general relativity},
+    \href{https://journals.aps.org/prd/abstract/10.1103/ng8w-98sz}{Phys. Rev. D {\bf 111}, 124040 (2025)}
+    [\href{https://arxiv.org/abs/2504.10130}{arXiv:2504.10130}]
 
-    \item J. Alsing, H. O. Silva, and E. Berti,
-    \emph{Evidence for a maximum mass cut-off in the neutron star mass distribution and constraints on the equation of state},
-    \href{https://academic.oup.com/mnras/article-abstract/478/1/1377/4987228?redirectedFrom=fulltext}{MNRAS {\bf478} 1377 (2018)}
-    [\href{https://arxiv.org/abs/1709.07889}{arXiv:1709.07889}]
+    \item A. Eichhorn, Pedro G. S. Fernandes, A. Held, and H. O. Silva,
+    \emph{Breaking black-hole uniqueness at supermassive scales},
+    \href{https://iopscience.iop.org/article/10.1088/1361-6382/add3b6}{Class. Quantum Grav. {\bf 42}, 105006 (2025)}
+    [\href{https://arxiv.org/abs/2312.11430}{arXiv:2312.11430}]
 
-    \item H. O. Silva, J. Sakstein, L. Gualtieri, T.~P. Sotiriou, and E. Berti,
-    \emph{Spontaneous scalarization of black holes and compact stars from a Gauss-Bonnet coupling},
-    \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.131104}{Phys. Rev. Lett. {\bf120} 131104 (2018)}
-    [\href{https://arxiv.org/abs/1711.02080}{arXiv:1711.02080}]
-    \label{itm:edgb_sca}
+    \item H. O. Silva, J.-W. Kim, and M. V. S. Saketh,
+    \emph{Kerr-Newman quasinormal modes and Seiberg-Witten theory},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.111.104021}{Phys. Rev. D {\bf 111}, 104021 (2025)}
+    [\href{https://arxiv.org/abs/2502.17488}{arXiv:2502.17488}]
 
-    \item H. O. Silva and N. Yunes,
-    \emph{Neutron star pulse profiles in scalar-tensor theories of gravity},
-    \href{http://iopscience.iop.org/article/10.1088/1361-6382/aa995a}{Phys. Rev. D {\bf99} 044034 (2019)}
-    [\href{https://arxiv.org/abs/1808.04391}{arXiv:1808.04391}]
+    \item H. O. Silva, G. Tambalo, K. Glampedakis, K. Yagi, and J. Steinhoff,
+    \emph{Quasinormal modes and their excitation beyond general relativity},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.110.024042}{Phys. Rev. D {\bf 110}, 024042 (2024)}
+    [\href{https://arxiv.org/abs/2404.11110}{arXiv:2404.11110}]
 
-    \item H. O. Silva, C. F. B. Macedo, T. P. Sotiriou, L. Gualtieri,
-    	  J. Sakstein, and E. Berti,
-	\emph{Stability of scalarized black hole solutions in scalar-Gauss-Bonnet gravity},
-	\href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.99.064011}{Phys. Rev. D {\bf99} 064011 (2019)}
-	[\href{https://arxiv.org/abs/1812.05590}{arXiv:1812.05590}]
+    \item M. K. Mandal, P. Mastrolia, H. O. Silva, R. Patil, and J. Steinhoff,
+    \emph{Renormalizing Love: tidal effects at the third post-Newtonian order},
+    \href{https://link.springer.com/article/10.1007/JHEP02(2024)188}{J. High Energ. Phys. {\bf 2024}, 188 (2024)}
+    [\href{https://arxiv.org/abs/2308.01865}{arXiv:2308.01865}]
 
-    \item C. F. B. Macedo, J. Sakstein, E. Berti, L. Gualtieri, H. O. Silva, and T. P. Sotiriou,
-    \emph{Self-interactions and Spontaneous Black Hole Scalarization},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.99.104041}{Phys. Rev. D {\bf 99}, 104041 (2019)}
-    [\href{https://arxiv.org/abs/1903.06784}{arXiv:1903.06784}]
+    \item H. O. Silva, G. Tambalo, K. Glampedakis, and K. Yagi,
+    \emph{Gravitational radiation from a particle plunging into a Schwarzschild black hole: frequency-domain and semirelativistic analyses},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.024036}{Phys. Rev. D {\bf 109}, 024036 (2024)}
+    [\href{https://arxiv.org/abs/2308.14823}{arXiv:2308.14823}]
 
-    \item H. O. Silva and N. Yunes,
-    \emph{Neutron star x-ray burst oscillations as extreme gravity probes},
-    \href{https://iopscience.iop.org/article/10.1088/1361-6382/ab3560}{Class. Quantum Grav. {\bf 36}, 17LT01 (2019)}
-    [\href{https://arxiv.org/abs/1902.10269}{arXiv:1902.10269}]
+    \item M. K. Mandal, P. Mastrolia, H. O. Silva, R. Patil, and J. Steinhoff,
+    \emph{Gravitoelectric dynamical tides at second post-Newtonian order},
+    \href{https://link.springer.com/article/10.1007/JHEP11(2023)067}{J. High Energ. Phys. {\bf 2023}, 67 (2023)}
+    [\href{https://arxiv.org/abs/2304.02030}{arXiv:2304.02030}]
 
-    \item H. Sotani, H. O. Silva, and G. Pappas,
-    \emph{Finite size effects on the light curves of slowly-rotating neutron stars},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.043006}{Phys. Rev. D {\bf 100}, 043006 (2019)}
-    [\href{https://arxiv.org/abs/1905.07668}{arXiv:1905.07668}]
-    \label{itm:pp_fs}
+    \item E. Maggio, H. O. Silva, A. Buonanno, and A. Ghosh,
+    \emph{Tests of general relativity in the nonlinear regime:~a~parametrized~plunge-merger-ringdown~gravitational~waveform~model},
+    \href{https://link.aps.org/doi/10.1103/PhysRevD.108.024043}{Phys. Rev. D {\bf 108}, 024043 (2023)}
+    [\href{https://arxiv.org/abs/2212.09655}{arXiv:2212.09655}]
 
-    \item A. Saffer, H. O. Silva, and N. Yunes,
-    \emph{The exterior spacetime of relativistic stars in scalar-Gauss-Bonnet gravity},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.044030}{Phys. Rev. D {\bf 100}, 044030 (2019)}
-    [\href{https://arxiv.org/abs/1903.07779}{arXiv:1903.07779}]
+    \item H. O. Silva, A. Ghosh, and A. Buonanno,
+    \emph{Black-hole ringdown as a probe of higher-curvature gravity theories},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.044030}{Phys.~Rev.~D {\bf 107}, 044030 (2023)} [\href{https://arxiv.org/abs/2212.09655}{\nolinkurl{arXiv:2205.05132}}]
 
-    \item K. Glampedakis and H. O. Silva,
-    \emph{Eikonal quasinormal modes of black holes beyond general relativity},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.044040}{Phys. Rev. D {\bf 100}, 044040 (2019)}
-    [\href{https://arxiv.org/abs/1906.05455}{arXiv:1906.05455}]
+    \item M. Elley, H. O. Silva, H. Witek, and N. Yunes,
+    \emph{Spin-induced dynamical scalarization, de-scalarization and stealthness in scalar-Gauss-Bonnet gravity during black hole coalescence},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.106.044018}{Phys. Rev. D {\bf 106}, 044018 (2022)}
+    [\href{https://arxiv.org/abs/2205.06240}{arXiv:2205.06240}]
 
-    \item H. O. Silva and N. Yunes,
-    \emph{More than the sum of its parts: combining parameterized tests of extreme gravity},
-    \href{https://link.aps.org/doi/10.1103/PhysRevD.100.084034}{Phys. Rev. D {\bf 100}, 084034 (2019)}
-    [\href{https://arxiv.org/abs/1906.00485}{arXiv:1906.00485}]
+    \item F.-L. Juli\'e, H. O. Silva, E. Berti, and N. Yunes,
+    \emph{Black hole sensitivities in Einstein-scalar-Gauss-Bonnet gravity},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.124031}{Phys.~Rev.~D {\bf 105}, 124031 (2022)}
+    [\href{https://arxiv.org/abs/2202.01329}{arXiv:2202.01329}]
+
+    \item P. Wagle, N. Yunes, and H. O. Silva,
+    \emph{Quasinormal modes of slowly-rotating black holes in dynamical Chern-Simons gravity},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.124003}{Phys. Rev. D {\bf 105}, 124003 (2022)}
+    [\href{https://arxiv.org/abs/2103.09913}{arXiv:2103.09913}]
+
+    \item H.~O.~Silva, A.~Coates, F.~M.~Ramazano\u{g}lu, and T.~P.~Sotiriou,
+    \emph{Ghost of vector fields in compact stars},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.024046}{Phys. Rev. D {\bf 105}, 024046 (2022)}
+    [\href{https://arxiv.org/abs/2110.04594}{arXiv:2110.04594}]
+
+    \item A. Bryant, H. O. Silva, K. Yagi, and K. Glampedakis,
+    \emph{Eikonal quasinormal modes of black holes beyond general relativity III: scalar Gauss-Bonnet gravity},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.104.044051}{Phys. Rev. D {\bf 104}, 044051 (2021)}
+    [\href{https://arxiv.org/abs/2106.09657}{arXiv:2106.09657}]
+
+    \item S. E. Perkins, R. Nair, H. O. Silva, and N. Yunes,
+    \emph{Improved gravitational-wave constraints on higher-order curvature theories of gravity},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.104.024060}{Phys. Rev. D {\bf 104}, 024060 (2021)}
+    [\href{https://arxiv.org/abs/2104.11189}{arXiv:2104.11189}]
+
+    \item H. O. Silva, H. Witek, M. Elley, and N. Yunes,
+    \emph{Dynamical descalarization in binary black hole mergers},
+    \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.031101}{Phys. Rev. Lett. {\bf 127}, 031101 (2021)}
+    [\href{https://arxiv.org/abs/2012.10436}{arXiv:2012.10436}]
+
+    \item Y. Xie, J. Zhang, H. O. Silva, C. de Rham, H. Witek, and N. Yunes,
+    \emph{A square peg in a circular hole: choosing the right ansatz for isolated black holes in generic gravitational theories},
+    \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.241104}{Phys. Rev. Lett. {\bf 126}, 241104 (2021)}
+    [\href{https://arxiv.org/abs/2103.03925}{arXiv:2103.03925}]
+
+    \item H. O. Silva, A. Miguel Holgado, A. C\'{a}rdenas-Avenda\~{n}o, and N. Yunes,
+    \emph{Astrophysical and theoretical physics implications from multimessenger neutron star observations},
+    \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.181101}{Phys. Rev. Lett. {\bf 126}, 181101 (2021)}
+    [\href{https://arxiv.org/abs/2004.01253}{arXiv:2004.01253}]\\
+    (Featured as {\color{venetianred}\sc Editors's Suggestion} and in American Physical Society's \href{https://physics.aps.org/articles/v14/66}{Physics} magazine.)
+    \label{pub:SilvaPRL2021Nicer}
+
+    \item A. Miguel Holgado, H. O. Silva, P. M. Ricker, and N. Yunes,
+    \emph{The role of strong gravity and the nuclear equation of state on neutron-star common-envelope accretion},
+    \href{https://iopscience.iop.org/article/10.3847/2041-8213/abecdd}{Astrophys. J. Lett. {\bf 901}, L22 (2021)}
+    [\href{https://arxiv.org/abs/2102.08267}{arXiv:2101.08267}]
+
+    \item H. O. Silva, G. Pappas, N. Yunes, and K. Yagi,
+    \emph{The surface of rapidly-rotating neutron stars: implications to neutron star parameter estimation},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.103.063038}{Phys. Rev. D {\bf 103}, 063038 (2021)}
+    [\href{https://arxiv.org/abs/2008.05565}{arXiv:2008.05565}]
+
+    \item C. A. R. Herdeiro, E. Radu, H. O. Silva, T. P. Sotiriou, and N. Yunes,
+    \emph{Spin-induced scalarized black holes},
+    \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.011103}{Phys. Rev. Lett. {\bf 126}, 011103 (2021)}
+    [\href{https://arxiv.org/abs/2009.03904}{arXiv:2009.03904}]
+
+    \item H. O. Silva and K. Glampedakis,
+    \emph{Eikonal quasinormal modes of black holes beyond general relativity II: generalized scalar-tensor perturbations},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.101.044051}{Phys. Rev. D {\bf 101}, 044051 (2020)}
+    [\href{https://arxiv.org/abs/1912.09286}{arXiv:1912.09286}]
 
     \item R. Nair, S. Perkins, H. O. Silva, and N. Yunes,
     \emph{Fundamental physics implications on higher-curvature theories from
@@ -791,184 +886,191 @@ Bel\'em, PA, Brazil
     \href{https://link.aps.org/doi/10.1103/PhysRevD.100.104012}{Phys. Rev. D {\bf 100}, 104012 (2019)}
     [\href{https://arxiv.org/abs/1909.11756}{arXiv:1909.11756}]
 
-    \item H. O. Silva and K. Glampedakis,
-    \emph{Eikonal quasinormal modes of black holes beyond general relativity II: generalized scalar-tensor perturbations},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.101.044051}{Phys. Rev. D {\bf 101}, 044051 (2020)}
-    [\href{https://arxiv.org/abs/1912.09286}{arXiv:1912.09286}]
+    \item H. O. Silva and N. Yunes,
+    \emph{More than the sum of its parts: combining parameterized tests of extreme gravity},
+    \href{https://link.aps.org/doi/10.1103/PhysRevD.100.084034}{Phys. Rev. D {\bf 100}, 084034 (2019)}
+    [\href{https://arxiv.org/abs/1906.00485}{arXiv:1906.00485}]
 
-    \item C. A. R. Herdeiro, E. Radu, H. O. Silva, T. P. Sotiriou, and N. Yunes,
-    \emph{Spin-induced scalarized black holes},
-    \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.011103}{Phys. Rev. Lett. {\bf 126}, 011103 (2021)}
-    [\href{https://arxiv.org/abs/2009.03904}{arXiv:2009.03904}]
+    \item K. Glampedakis and H. O. Silva,
+    \emph{Eikonal quasinormal modes of black holes beyond general relativity},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.044040}{Phys. Rev. D {\bf 100}, 044040 (2019)}
+    [\href{https://arxiv.org/abs/1906.05455}{arXiv:1906.05455}]
 
-    \item H. O. Silva, G. Pappas, N. Yunes, and K. Yagi,
-    \emph{The surface of rapidly-rotating neutron stars: implications to neutron star parameter estimation},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.103.063038}{Phys. Rev. D {\bf 103}, 063038 (2021)}
-    \begin{sloppypar}[\href{https://arxiv.org/abs/2008.05565}{arXiv:2008.05565}]\end{sloppypar}
+    \item A. Saffer, H. O. Silva, and N. Yunes,
+    \emph{The exterior spacetime of relativistic stars in scalar-Gauss-Bonnet gravity},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.044030}{Phys.~Rev.~D {\bf 100}, 044030 (2019)}
+    [\href{https://arxiv.org/abs/1903.07779}{arXiv:1903.07779}]
 
-    \item A. Miguel Holgado, H. O. Silva, P. M. Ricker, and N. Yunes,
-    \emph{The role of strong gravity and the nuclear equation of state on neutron-star common-envelope accretion},
-    \href{https://iopscience.iop.org/article/10.3847/2041-8213/abecdd}{Astrophys. J. Lett. {\bf 901}, L22 (2021)}
-    [\href{https://arxiv.org/abs/2102.08267}{arXiv:2101.08267}]
+    \item \label{itm:pp_fs}
+    H. Sotani, H. O. Silva, and G. Pappas,
+    \emph{Finite size effects on the light curves of slowly-rotating neutron stars},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.043006}{Phys.~Rev.~D {\bf 100}, 043006 (2019)}
+    [\href{https://arxiv.org/abs/1905.07668}{arXiv:1905.07668}]
 
-    \item H. O. Silva, A. Miguel Holgado, A. C\'{a}rdenas-Avenda\~{n}o, and N. Yunes,
-    \emph{Astrophysical and theoretical physics implications from multimessenger neutron star observations},
-    \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.181101}{Phys. Rev. Lett. {\bf 126}, 181101 (2021)}
-    [\href{https://arxiv.org/abs/2004.01253}{arXiv:2004.01253}]
-    (Featured as {\color{venetianred}\sc Editors's Suggestion} and on \href{https://physics.aps.org/articles/v14/66}{Physics}.).
-    \label{pub:SilvaPRL2021Nicer}
+    \item H. O. Silva and N. Yunes,
+    \emph{Neutron star x-ray burst oscillations as extreme gravity probes},
+    \href{https://iopscience.iop.org/article/10.1088/1361-6382/ab3560}{Class. Quantum Grav. {\bf 36}, 17LT01 (2019)}
+    [\href{https://arxiv.org/abs/1902.10269}{arXiv:1902.10269}]
 
-    \item Y. Xie, J. Zhang, H. O. Silva, C. de Rham, H. Witek, and N. Yunes,
-    \emph{A square peg in a circular hole: choosing the right ansatz for isolated black holes in generic gravitational theories},
-    \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.241104}{Phys. Rev. Lett. {\bf 126}, 241104 (2021)}
-    [\href{https://arxiv.org/abs/2103.03925}{arXiv:2103.03925}]
+    \item C. F. B. Macedo, J. Sakstein, E. Berti, L. Gualtieri, H. O. Silva, and T. P. Sotiriou,
+    \emph{Self-interactions and Spontaneous Black Hole Scalarization},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.99.104041}{Phys. Rev. D {\bf 99}, 104041 (2019)}
+    [\href{https://arxiv.org/abs/1903.06784}{arXiv:1903.06784}]
 
-    \item H. O. Silva, H. Witek, M. Elley, and N. Yunes,
-    \emph{Dynamical descalarization in binary black hole mergers},
-    \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.031101}{Phys. Rev. Lett. {\bf 127}, 031101 (2021)}
-    [\href{https://arxiv.org/abs/2012.10436}{arXiv:2012.10436}]
+    \item H. O. Silva, C. F. B. Macedo, T. P. Sotiriou, L. Gualtieri,
+    	  J. Sakstein, and E. Berti,
+	\emph{Stability of scalarized black hole solutions in scalar-Gauss-Bonnet gravity},
+	\href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.99.064011}{Phys. Rev. D {\bf99} 064011 (2019)}
+	[\href{https://arxiv.org/abs/1812.05590}{arXiv:1812.05590}]
 
-    \item S. E. Perkins, R. Nair, H. O. Silva, and N. Yunes,
-    \emph{Improved gravitational-wave constraints on higher-order curvature theories of gravity},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.104.024060}{Phys. Rev. D {\bf 104}, 024060 (2021)}
-    [\href{https://arxiv.org/abs/2104.11189}{arXiv:2104.11189}]
+    \item H. O. Silva and N. Yunes,
+    \emph{Neutron star pulse profiles in scalar-tensor theories of gravity},
+    \href{http://iopscience.iop.org/article/10.1088/1361-6382/aa995a}{Phys. Rev. D {\bf99} 044034 (2019)}
+    [\href{https://arxiv.org/abs/1808.04391}{arXiv:1808.04391}]
 
-    \item A. Bryant, H. O. Silva, K. Yagi, and K. Glampedakis,
-    \emph{Eikonal quasinormal modes of black holes beyond general relativity III: scalar Gauss-Bonnet gravity},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.104.044051}{Phys. Rev. D {\bf 104}, 044051 (2021)}
-    [\href{https://arxiv.org/abs/2106.09657}{arXiv:2106.09657}]
+    \item \label{itm:edgb_sca} H. O. Silva, J. Sakstein, L. Gualtieri, T.~P. Sotiriou, and E. Berti,
+    \emph{Spontaneous scalarization of black holes and compact stars from a Gauss-Bonnet coupling},
+    \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.131104}{Phys. Rev. Lett. {\bf120} 131104 (2018)}
+    [\href{https://arxiv.org/abs/1711.02080}{arXiv:1711.02080}]
 
-    \item H.~O.~Silva, A.~Coates, F.~M.~Ramazano\u{g}lu, and T.~P.~Sotiriou,
-    \emph{Ghost of vector fields in compact stars},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.024046}{Phys. Rev. D {\bf 105}, 024046 (2022)}
-    [\href{https://arxiv.org/abs/2110.04594}{arXiv:2110.04594}]
+    \item J. Alsing, H. O. Silva, and E. Berti,
+    \emph{Evidence for a maximum mass cut-off in the neutron star mass distribution and constraints on the equation of state},
+    \href{https://academic.oup.com/mnras/article-abstract/478/1/1377/4987228?redirectedFrom=fulltext}{MNRAS {\bf478} 1377 (2018)}
+    [\href{https://arxiv.org/abs/1709.07889}{arXiv:1709.07889}]
 
-    \item P. Wagle, N. Yunes, and H. O. Silva,
-    \emph{Quasinormal modes of slowly-rotating black holes in dynamical Chern-Simons gravity},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.124003}{Phys. Rev. D {\bf 105}, 124003 (2022)}
-    [\href{https://arxiv.org/abs/2103.09913}{arXiv:2103.09913}]
+    \item H. O. Silva and N. Yunes,
+    \emph{I-Love-Q to the extreme},
+    \href{http://iopscience.iop.org/article/10.1088/1361-6382/aa995a}{Class. Quantum Grav. {\bf35} 015005 (2017)}
+    [\href{https://arxiv.org/abs/1710.00919}{arXiv:1710.00919}]
 
-    \item F.-L. Juli\'e, H. O. Silva, E. Berti, and N. Yunes,
-    \emph{Black hole sensitivities in Einstein-scalar-Gauss-Bonnet gravity},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.124031}{Phys. Rev. D {\bf 105}, 124031 (2022)}
-    [\href{https://arxiv.org/abs/2202.01329}{arXiv:2202.01329}]
+    \item \label{itm:postkerr}
+    K. Glampedakis, G. Pappas, H. O. Silva, and E. Berti,
+    \emph{Post-Kerr black hole spectroscopy},
+    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.96.064054}{Phys. Rev. D {\bf96} 064054 (2017)}
+    [\href{https://arxiv.org/abs/1706.07658}{arXiv:1706.07658}]
 
-    \item M. Elley, H. O. Silva, H. Witek, and N. Yunes,
-    \emph{Spin-induced dynamical scalarization, de-scalarization and stealthness in scalar-Gauss-Bonnet gravity during black hole coalescence},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.106.044018}{Phys. Rev. D {\bf 106}, 044018 (2022)}
-    [\href{https://arxiv.org/abs/2205.06240}{arXiv:2205.06240}]
-
-    \item H. O. Silva, A. Ghosh, and A. Buonanno,
-    \emph{Black-hole ringdown as a probe of higher-curvature gravity theories},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.044030}{Phys. Rev. D {\bf 107}, 044030 (2023)}
-    [\href{https://arxiv.org/abs/2212.09655}{arXiv:2205.05132}]
-
-    \item E. Maggio, H. O. Silva, A. Buonanno, and A. Ghosh,
-    \emph{Tests of general relativity in the nonlinear regime:~a~parametrized~plunge-merger-ringdown~gravitational~waveform~model},
-    \href{https://link.aps.org/doi/10.1103/PhysRevD.108.024043}{Phys. Rev. D {\bf 108}, 024043 (2023)}
-    [\href{https://arxiv.org/abs/2212.09655}{arXiv:2212.09655}]
-
-    \item M. K. Mandal, P. Mastrolia, H. O. Silva, R. Patil, and J. Steinhoff,
-    \emph{Gravitoelectric dynamical tides at second post-Newtonian order},
-    \href{https://link.springer.com/article/10.1007/JHEP11(2023)067}{J. High Energ. Phys. {\bf 2023}, 67 (2023)}
-    [\href{https://arxiv.org/abs/2304.02030}{arXiv:2304.02030}]
-
-    \item H. O. Silva, G. Tambalo, K. Glampedakis, and K. Yagi,
-    \emph{Gravitational radiation from a particle plunging into a Schwarzschild black hole: frequency-domain and semirelativistic analyses},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.024036}{Phys. Rev. D {\bf 109}, 024036 (2024)}
-    [\href{https://arxiv.org/abs/2308.14823}{arXiv:2308.14823}]
-
-    \item M. K. Mandal, P. Mastrolia, H. O. Silva, R. Patil, and J. Steinhoff,
-    \emph{Renormalizing Love: tidal effects at the third post-Newtonian order},
-    \href{https://link.springer.com/article/10.1007/JHEP02(2024)188}{J. High Energ. Phys. {\bf 2024}, 188 (2024)}
-    [\href{https://arxiv.org/abs/2308.01865}{arXiv:2308.01865}]
-
-    \item H. O. Silva, G. Tambalo, K. Glampedakis, K. Yagi, and J. Steinhoff,
-    \emph{Quasinormal modes and their excitation beyond general relativity},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.110.024042}{Phys. Rev. D {\bf 110}, 024042 (2024)}
-    [\href{https://arxiv.org/abs/2404.11110}{arXiv:2404.11110}]
-
-    \item H. O. Silva, J.-W. Kim, and M. V. S. Saketh,
-    \emph{Kerr-Newman quasinormal modes and Seiberg-Witten theory},
-    \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.111.104021}{Phys. Rev. D {\bf 111}, 104021 (2025)}
-    [\href{https://arxiv.org/abs/2502.17488}{arXiv:2502.17488}]
-
-    \item A. Eichhorn, Pedro G. S. Fernandes, A. Held, and H. O. Silva,
-    \emph{Breaking black-hole uniqueness at supermassive scales},
-    \href{https://iopscience.iop.org/article/10.1088/1361-6382/add3b6}{Class. Quantum Grav. {\bf 42}, 105006 (2025)}
-    [\href{https://arxiv.org/abs/2312.11430}{arXiv:2312.11430}]
-
-    \item L. Pompili, E. Maggio, H. O. Silva, and A. Buonanno,
-    \emph{A parametrized spin-precessing inspiral-merger-ringdown waveform model for tests of general relativity},
-    \href{https://journals.aps.org/prd/abstract/10.1103/ng8w-98sz}{Phys. Rev. D {\bf 111}, 124040 (2025)}
-    [\href{https://arxiv.org/abs/2504.10130}{arXiv:2504.10130}]
-
-    \item J. Streibert, H. O. Silva, and M. Zumalac\'arregui,
-    \emph{Eikonal gravitational-wave lensing in Einstein-aether theory},
-    \href{https://journals.aps.org/prd/abstract/10.1103/jrsp-1xll}{Phys. Rev. D {\bf 112}, 024073 (2025)}
-    [\href{https://arxiv.org/abs/2404.07782}{arXiv:2404.07782}]
-
-    \item Y. Gao, H-J. Kuan, C-J Xia, H. O. Silva, and M. Shibata,
-    \emph{Nonradial oscillations of stratified neutron stars with solid crusts: Mode characterization and tidal resonances in coalescing binaries},
-    \href{https://journals.aps.org/prd/abstract/10.1103/nbk7-8kts}{Phys. Rev. D {\bf 112}, 123006 (2025)}
-    [\href{https://arxiv.org/abs/2509.00257}{arXiv:2509.00257}]
+    \item \label{itm:astroptov}
+    K. Glampedakis, G. Pappas, H. O. Silva, and E. Berti,
+    \emph{Astrophysical application of the Post-Tolman-Oppenheimer-Volkoff formalism},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.94.044030}{Phys. Rev. D {\bf94} 044030 (2016)}
+    [\href{https://arxiv.org/abs/1606.05106}{arXiv:1606.05106}]
     (Featured as {\color{venetianred}\sc Editors's Suggestion}).
 
-    \item S. Saha and H. O. Silva,
-    \emph{Quasinormal modes of Kerr-Newman black holes: revisiting the Dudley-Finley approximation},
-    \href{https://journals.aps.org/prd/abstract/10.1103/2wc1-yntl}{Phys. Rev. D {\bf 113}, 064009 (2026)}
-    [\href{https://arxiv.org/abs/2510.05354}{arXiv:2510.05354}]
+    \item \label{itm:disformal}
+    M. Minamitsuji and H. O. Silva,
+    \emph{Relativistic stars in scalar-tensor theories with disformal coupling},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.93.124056}{Phys. Rev. D {\bf93} 124041 (2016)}
+    [\href{https://arxiv.org/abs/1604.07742}{arXiv:1604.07742}]
 
-    \item H. O. Silva, G. Tambalo, K. Glampedakis, and K. Yagi
-    \emph{Quasinormal modes and their excitation beyond general relativity. II: isospectrality loss in gravitational waveforms},
-    \href{https://journals.aps.org/prd/abstract/10.1103/lgfg-lvjn}{Phys. Rev. D {\bf 113}, 084012 (2026)}
-    [\href{https://arxiv.org/abs/2601.13411}{arXiv:2601.13411}]
-\end{bibenum}
+    \item A. Maselli, H. O. Silva, M. Minamitsuji, and E. Berti,
+    \emph{Neutron stars in Horndeski gravity},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.93.124056}{Phys. Rev. D {\bf93} 124056 (2016)}
+    [\href{https://arxiv.org/abs/1603.04876}{arXiv:1603.04876}]
 
-\blankline
+    \item H. O. Silva, H. Sotani, and E. Berti,
+    \emph{Low-mass neutron stars: universal relations, the nuclear symmetry energy and gravitational radiation},\\
+    \href{http://mnras.oxfordjournals.org/content/459/4/4378}{MNRAS {\bf459}
+    4378 (2016)}
+    [\href{http://arxiv.org/abs/1601.03407}{arXiv:1601.03407}]
+
+    \item \label{itm:horndeski}
+    A. Maselli, H. O. Silva, M. Minamitsuji, and E. Berti,
+    \emph{Slowly rotating black hole solutions in Horndeski gravity},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.92.104049}{Phys. Rev. D {\bf92} 104049 (2015)}
+    [\href{http://arxiv.org/abs/1508.03044}{arXiv:1508.03044}].
+
+    \item \label{itm:multiscalar}
+    M. Horbatsch, H. O. Silva, D. Gerosa, P. Pani, E. Berti, L. Gualtieri, and U. Sperhake,
+    \emph{Tensor-multi-scalar theories: relativistic stars and 3+1 decomposition},
+    \href{http://iopscience.iop.org/article/10.1088/0264-9381/32/20/204001/meta;jsessionid=575DFA8E53663683D64E28DF82CE0294.c1}{Class. Quantum Grav.
+    {\bf32} 204001 (2015)}
+    [\href{http://arxiv.org/abs/1505.07462}{arXiv:1505.07462}],
+    (Chosen as
+    \MYhref[venetianred]{http://iopscience.iop.org/collections}{\sc IOPSelect})
+
+    \item K. Glampedakis, G. Pappas, H. O. Silva, and E. Berti,
+    \emph{Post-Tolman-Oppenheimer-Volkoff formalism for relativistic stars},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.92.024056}{Phys. Rev. D {\bf92} 024056 (2015)}
+    [\href{http://arxiv.org/abs/1504.02455}{arXiv:1504.02455}].
+
+    \item \label{itm:anisostar}
+    H. O. Silva, C. F. B. Macedo, E. Berti, and L. C. B. Crispino,
+    \emph{Slowly rotating anisotropic neutron stars in general relativity and scalar-tensor theory},
+    \href{http://iopscience.iop.org/article/10.1088/0264-9381/32/14/145008/meta}{Class. Quantum Grav. {\bf32} 145008 (2015)}
+    [\href{http://arxiv.org/abs/1411.6286}{arXiv:1411.6286}],
+    (Chosen as
+    \MYhref[venetianred]{http://iopscience.iop.org/collections}{\sc IOPSelect})
+    % (Chosen as \href{http://iopscience.iop.org/collections}{\sc IOPSelect}).
+
+    \item H. O. Silva, H. Sotani, E. Berti, and M. Horbatsch,
+    \emph{Torsional oscillations of neutron stars in scalar-tensor theory of gravity},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.124044}{Phys. Rev. D {\bf90} 124044 (2014)}
+    [\href{http://arxiv.org/abs/1410.2511}{arXiv:1410.2511}].
+
+    \item A. L. C. Rego, H. O. Silva, D. T. Alves, and C. Farina,
+    \emph{New signatures of the dynamical Casimir effect in a superconducting circuit},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.025003}{Phys. Rev. D {\bf90} 025003 (2014)}
+    [\href{http://arxiv.org/abs/1410.2511}{arXiv:1405.3720}].
+
+    \item \label{itm:robintd}
+    H. O. Silva and C. Farina,
+    \emph{Simple model for the dynamical Casimir effect for a static mirror with time-dependent properties},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.84.045003}{Phys. Rev. D {\bf84} 045003 (2011)}
+    [\href{http://arxiv.org/abs/1102.2238}{arXiv:1102.2238}].
+
+    \item D. T. Alves, E. R. Granhen, H. O. Silva, and M. G. Lima,
+    \emph{Exact behavior of the energy density inside an one-dimensional oscillating cavity with a thermal state},
+    \href{http://www.sciencedirect.com/science/article/pii/S0375960110009503}{Phys. Lett. A {\bf374} 3899-3907 (2010)}
+    [\href{http://arxiv.org/abs/1002.2238}{arXiv:1002.2238}].
+
+    \item D. T. Alves, E. R. Granhen, H. O. Silva, and M. G. Lima,
+    \emph{Quantum radiation force on the moving mirror of a cavity, with Dirichlet and Neumann boundary conditions for a vacuum, finite temperature, and a coherent state},
+    \href{http://journals.aps.org/prd/abstract/10.1103/PhysRevD.81.025016}{Phys. Rev. D {\bf81} 025016 (2010)}.
+% \end{bibenum}
+    \setcounter{pubCounter}{\value{enumi}}
+\end{etaremune}
 
 \section{Review Papers}
-
-\begin{bibenum}
-    \item E. Berti, (47 authors), H. O. Silva, (5 authors),
-    \emph{Testing general relativity with present and future astrophysical observations},
-    \href{http://iopscience.iop.org/article/10.1088/0264-9381/32/24/243001}{Class. Quantum Grav. {\bf32} 243001 (2015)}
-    [\href{http://arxiv.org/abs/1501.07274}{arXiv:1501.07274}].
-
-    \item D. D. Doneva, F. M. Ramazano\u{g}lu, H. O. Silva, T. P. Sotiriou, and S. S. Yazadjiev,
-    \emph{Spontaneous scalarization},
-    \href{https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.96.015004}{Rev. Mod. Phys. {\bf 96}, 015004 (2024)}
-    [\href{https://arxiv.org/abs/2211.01766}{arXiv:2211.01766}]
-
+% \begin{bibenum}
+\addtocounter{pubCounter}{-1}
+\begin{etaremune}[
+        start=\value{pubCounter},
+        topsep=0pt,
+        partopsep=0pt]
     \item E. Berti, (59 authors), H. O. Silva, and (8 authors),
     \emph{Black hole spectroscopy: from theory to experiment,}
     \href{https://iopscience.iop.org/article/10.1088/1361-6382/ae59e2}{Class. Quantum Grav. \textbf{43} 123001}
     [\href{https://arxiv.org/abs/2505.23895}{arXiv:2505.23895}]
-\end{bibenum}
 
-\blankline
+    \item D. D. Doneva, F. M. Ramazano\u{g}lu, H. O. Silva, T. P. Sotiriou, and S. S. Yazadjiev,
+    \emph{Spontaneous scalarization},
+    \href{https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.96.015004}{Rev.~Mod.~Phys.~{\bf 96},~015004~(2024)}
+    [\href{https://arxiv.org/abs/2211.01766}{arXiv:2211.01766}]
 
-\section{Publications Accepted or in Review}
-
-\begin{bibenum}
-    \item J. Zhang and H. O. Silva,
-    \emph{The crust of dark-matter admixed neutron stars: bulk properties and torsional oscillations,}
-    [\href{https://arxiv.org/abs/2606.27456}{arXiv:2606.27456}]
-\end{bibenum}
-
-\blankline
+    \item E. Berti, (47 authors), H. O. Silva, (5 authors),
+    \emph{Testing general relativity with present and future astrophysical observations},
+    \href{http://iopscience.iop.org/article/10.1088/0264-9381/32/24/243001}{Class. Quantum Grav. {\bf32} 243001 (2015)}
+    [\href{http://arxiv.org/abs/1501.07274}{arXiv:1501.07274}].
+    \setcounter{pubCounter}{\value{enumi}}
+\end{etaremune}
+% \end{bibenum}
 
 \section{Publications in Conference Proceedings}
 
-\begin{bibenum}
+% \begin{bibenum}
+\addtocounter{pubCounter}{-1}
+\begin{etaremune}[
+        start=\value{pubCounter},
+        topsep=0pt,
+        partopsep=0pt]
 
-    \item D. T. Alves, E. R. Granhen, M. G. Lima, H. O. Silva and A. R. L. Rego,
-    \emph{Time evolution of the energy density inside a one-dimensional non-static cavity with a vacuum, thermal and a coherent state},
-    \href{http://iopscience.iop.org/article/10.1088/1742-6596/161/1/012032/meta}{J. Phys.: Conf. Ser. {\bf161} 012032 (2009)}
-    [\href{http://arxiv.org/abs/0903.1305}{arXiv:0903.1305}]
+
+    \item H. O. Silva, A. Maselli, M. Minamitsuji and E. Berti,
+    \emph{Compact objects in Horndeski gravity},
+    \href{http://www.worldscientific.com/doi/abs/10.1142/S0218271816410066}{Int. J. Mod. Phys. D {\bf25} 1641006 (2016)}
+    [\href{http://arxiv.org/abs/1602.05997}{arXiv:1602.05997}]
     (Contribution to the proceedings of the
-    \emph{60 years of the Casimir effect}
-    conference).
+    \emph{3rd Amazonian Symposium on Physics and 5th NRHEP Network Meeting}).
 
     \item C. Farina, H. O. Silva, A. L. C. Rego and D. T. Alves,
     \emph{Time-dependent Robin boundary conditions in the dynamical Casimir effect},
@@ -978,20 +1080,20 @@ Bel\'em, PA, Brazil
     \emph{10th Quantum Field Theory Under the Influence of External Conditions}
     conference).
 
-    \item H. O. Silva, A. Maselli, M. Minamitsuji and E. Berti,
-    \emph{Compact objects in Horndeski gravity},
-    \href{http://www.worldscientific.com/doi/abs/10.1142/S0218271816410066}{Int. J. Mod. Phys. D {\bf25} 1641006 (2016)}
-    [\href{http://arxiv.org/abs/1602.05997}{arXiv:1602.05997}]
+    \item D. T. Alves, E. R. Granhen, M. G. Lima, H. O. Silva and A. R. L. Rego,
+    \emph{Time evolution of the energy density inside a one-dimensional non-static cavity with a vacuum, thermal and a coherent state},
+    \href{http://iopscience.iop.org/article/10.1088/1742-6596/161/1/012032/meta}{J. Phys.: Conf. Ser. {\bf161} 012032 (2009)}
+    [\href{http://arxiv.org/abs/0903.1305}{arXiv:0903.1305}]
     (Contribution to the proceedings of the
-    \emph{3rd Amazonian Symposium on Physics and 5th NRHEP Network Meeting}).
-
-\end{bibenum}
-
-\blankline
+    \emph{60 years of the Casimir effect}
+    conference).
+\end{etaremune}
+% \end{bibenum}
 
 \section{Book Chapters}
-\restartlist{bibenum}
-\begin{bibenum}
+% \restartlist{bibenum}
+% \begin{bibenum}
+\begin{enumerate}[partopsep=0pt,topsep=0pt]
     \item A. L. C. Rego, D. T. Alves, E. R. Granhen, H. O. Silva, M. G. Lima and W. P. Pires,
     \emph{The Dynamical Casimir Effect}, in
     \emph{Trends in Physics - Festschrift in homage to Prof. Jos\'e
@@ -1001,42 +1103,41 @@ Bel\'em, PA, Brazil
     \emph{Neutron stars as extreme gravity probes}, in
     \emph{Recent Progress on Gravity Tests}. Eds. C. Bambi and A. C\'ardenas-Avenda\~{n}o, (Springer, Singapore, 2024).
     [\href{http://arxiv.org/abs/2407.17578}{arXiv:2407.17578}]
-\end{bibenum}
+% \end{bibenum}
+\end{enumerate}
 
-\blankline
-
-\section{Others}
-\restartlist{bibenum}
-\begin{bibenum}
-    \item A.~Abac, (269 authors), H.~O.~Silva, (214 authors),
+\section{Collaboration papers}
+% \restartlist{bibenum}
+% \begin{bibenum}
+\begin{enumerate}[partopsep=0pt,topsep=0pt]
+    \item \label{itm:etbb}
+    A.~Abac, (269 authors), H.~O.~Silva, (214 authors),
     \emph{The Science of the Einstein Telescope},
     \href{https://iopscience.iop.org/article/10.1088/1475-7516/2026/03/081}{JCAP {\bf03} 081 (2026)}
     [\href{http://arxiv.org/abs/2503.12263}{arXiv:2503.12263}]
-\end{bibenum}
-
-\blankline
+% \end{bibenum}
+\end{enumerate}
 
 \section{Code contributions}
-\restartlist{bibenum}
-\begin{bibenum}
+% \restartlist{bibenum}
+% \begin{bibenum}
+\begin{enumerate}[partopsep=0pt,topsep=0pt]
     \item H.~Witek et al.,
     \emph{Canuda: a public numerical relativity library to probe fundamental physics},
     \href{https://zenodo.org/record/5520862}{10.5281/zenodo.5520862}
 
-    \halfblankline
-
-    I have contributed to the canuda\_edgb\_dec thorn used for numerical
+    I have contributed to the \texttt{canuda\_edgb\_dec} thorn used for numerical
     relativity simulations beyond general relativity with the Einstein Toolkit.
-\end{bibenum}
-
-\blankline
+% \end{bibenum}
+\end{enumerate}
 
 \section{Media \& Press}
-\restartlist{bibenum}
+% \restartlist{bibenum}
 Some of my work has been featured in media and press:
-\\
-\begin{bibenum}
-    \item Elke M\"uller, \href{https://www.aei.mpg.de/1038075/workshop-connecting-the-dots}{``'Exploring gravitational waveforms beyond general relativity'} \\
+
+% \begin{bibenum}
+\begin{etaremune}[]
+    \item Elke M\"uller, \href{https://www.aei.mpg.de/1038075/workshop-connecting-the-dots}{``Exploring gravitational waveforms beyond general relativity''} \\
     Story on the ``Connecting the dots'' workshop,
     June 8, 2023.
 
@@ -1080,179 +1181,241 @@ Some of my work has been featured in media and press:
     \item Claire Fullerton, \href{http://cqgplus.com/2015/09/23/spontaneous-scalarization-dead-or-alive/}{``Spontaneous scalarization: dead or alive?''} \\
         Invited contribution to \href{http://cqgplus.com}{\emph{CQG$+$}} based on publication \ref{itm:anisostar},
         September 23, 2015.
-\end{bibenum}
+% \end{bibenum}
+\end{etaremune}
 
-\section{Conference, invited talks and
-		colloquium presentations}
+\section{Invited talks, lectures, and colloquia}
+%\restartlist{bibenum}
+%\begin{bibenum}
+\begin{etaremune}[topsep=0pt,partopsep=0pt]
+    \item \emph{Illuminating the strong-field regime of gravity},
+    department colloquium at The University of Mississippi,
+    Oxford, USA
+    \hfill (08/09/2026).
 
-\restartlist{bibenum}
-\begin{bibenum}
     \item \emph{Quasinormal modes and their excitation beyond general relativity},
-    \invited{} seminar in the Department of Astrophysical and Cosmological Relativity at the Max Planck Institute for Gravitational Physics (Albert Einstein Institute),
+    seminar in the Department of Astrophysical and Cosmological Relativity at the Max Planck Institute for Gravitational Physics (Albert Einstein Institute),
     Potsdam, Germany
     \hfill (15/04/2026).
 
     \item \emph{Modes quasinormais de buracos negros em teorias efetivas da gravitação},
-    \invited{} seminar at Universidade de Bras\'ilia,
+    seminar at Universidade de Bras\'ilia,
     Bras\'ilia, Brazil
     \hfill (02/06/2026).
 
     \item \emph{Quasinormal modes and their excitation beyond general relativity},
-    \invited{} seminar at Johns Hopkins University,
+    seminar at Johns Hopkins University,
     Baltimore, USA
     \hfill (07/04/2026).
 
     \item \emph{A review under review: Spontaneous Scalarization},
-    \invited{} talk at APS Global Physics Summit,
+    talk at APS Global Physics Summit,
     Denver, USA
     \hfill (18/03/2026).
 
     \item \emph{The ringing of a different bell: quasinormal modes and their excitation beyond general relativity},
-    contributed talk at APS Global Physics Summit,
-    Denver, USA
-    \hfill (18/03/2026).
-
-    \item \emph{The ringing of a different bell: quasinormal modes and their excitation beyond general relativity},
-    \invited{} seminar at The Leonard E. Parker Center for Gravitation,
+    seminar at The Leonard E. Parker Center for Gravitation,
     Cosmology \& Astrophysics at the University of Wisconsin-Milwaukee,
     Milwaukee, USA
     \hfill (10/10/2025).
 
     \item \emph{Strong-field experimental relativity},
-    \invited{} lecture in the International Max Planck Research School on Gravitational-Wave Astronomy Lecture Week,
+    lecture in the International Max Planck Research School on Gravitational-Wave Astronomy Lecture Week,
     Wanzleben, Germany
     \hfill (16/09/2024).
 
     \item \emph{Quasinormal modes and their excitation beyond general relativity},
-    \invited{} talk in the workshop ``New Frontiers in Strong Gravity'',
+    talk in the workshop ``New Frontiers in Strong Gravity'',
     Benasque, Spain.
     \hfill (12/07/2024).
 
     \item \emph{Quasinormal modes and their excitation beyond general relativity},
-    \invited{} virtual talk in the Gravitational Physics Seminar, organized by the Indian Institute of Technology Gandhinagar and the Indian Association of the Cultivation of Science
+    virtual talk in the Gravitational Physics Seminar, organized by the Indian Institute of Technology Gandhinagar and the Indian Association of the Cultivation of Science
     \hfill (03/06/2024).
 
     \item \emph{Quasinormal modes and their excitation beyond general relativity},
-    \invited{} talk in the Department of Computational Relativistic Astrophysics, Max Planck Institute for Gravitational Physics, Potsdam, Germany
+    talk in the Department of Computational Relativistic Astrophysics, Max Planck Institute for Gravitational Physics, Potsdam, Germany
     \hfill (28/05/2024).
 
     \item \emph{Testing general relativity with binary black holes},
-    \invited{} talk in the Department of Quantum Gravity and Unified Theories, Max Planck Institute for Gravitational Physics, Potsdam, Germany
+    talk in the Department of Quantum Gravity and Unified Theories, Max Planck Institute for Gravitational Physics, Potsdam, Germany
     \hfill (04/04/2024).
 
     \item \emph{Black hole perturbations and phase-amplitude methods},
-    \invited{} talk in the Universitat de les Illes Balears, Palma, Spain.
+    talk in the Universitat de les Illes Balears, Palma, Spain.
     \hfill (18/12/2023).
 
     \item \emph{Testing strong-field gravity with multimessenger observations of neutron stars},
-    \invited{} talk in the conference ``Gravity Shape Pisa: New Frontiers in Gravity Phenomenology'',
+    talk in the conference ``Gravity Shape Pisa: New Frontiers in Gravity Phenomenology'',
     Pisa, Italy
     \hfill (26/10/2023).
 
     \item \emph{Black hole scalarization},
-    \invited{} talk at the I GraviTas Workshop on Strong Tests, Salin\'opolis, Brazil
+    talk at the I GraviTas Workshop on Strong Tests, Salin\'opolis, Brazil
     \hfill (29/08/2023).
 
     \item \emph{Black hole scalarization},
-    \invited{} talk at the 41st Samahang Pisika ng Pilipinas Physics Conference and Annual Meeting, Del Carmo, Siargao Island, Surigao Del Norte, Philippines
+    talk at the 41st Samahang Pisika ng Pilipinas Physics Conference and Annual Meeting, Del Carmo, Siargao Island, Surigao Del Norte, Philippines
     \hfill (19/07/2023).
 
     \item \emph{Black hole scalarization: lessons from numerical relativity},
-    \invited{} talk at European Einstein Toolkit Meeting, University of Aveiro, Aveiro, Portugal
+    talk at European Einstein Toolkit Meeting, University of Aveiro, Aveiro, Portugal
     \hfill (22/06/2023).
+
+    \item
+    \emph{Testing general relativity in the nonlinear regime with black-hole binaries},
+    seminar at the Princeton Gravity Initiative, Princeton University, Princeton, USA,
+    (14/11/2022).
+
+    \item
+    \emph{Testing general relativity in the nonlinear regime with black-hole binaries},
+    seminar at Universidad Nacional Aut\'onoma de M\'exico, Ciudad de M\'exico, M\'exico,
+    (27/10/2022).
+
+    \item
+    \emph{Testing general relativity in the merger-ringdown phase of binary black hole coalescenses},
+    talk at the workshop \href{https://sites.google.com/view/fundamental-aspects-of-gravity}{``Fundamental aspects of gravity''}, Imperial College London, United Kingdom,
+    (11/08/2022).
+
+    \item
+    \emph{Binary black hole coalescence in scalar-Gauss-Bonnet gravity},
+    talk at International Centre for Theoretical Physics Asia-Pacific,
+    China
+    (02/06/2022).
+
+    \item
+    \emph{Probing strong-field gravity with multimessenger neutron star observations},
+    talk at Le Laboratoire Univers et Th\'eories (LUTH), l'Observatoire de Paris and Universit\'e Paris Cit\'e,
+    France
+    (07/04/2022).
+
+    \item
+    \emph{Tests of general relativity with isolated neutron stars},
+    talk for the online workshop \href{https://honghui-liu.github.io/gravity-test/}{``Recent progress on gravity tests''},
+    (16/02/2022).
+
+    \item
+    \emph{Multi-messenger tests of strong-field gravity
+    with neutron stars},
+    seminar at Universiteit Utrecht in Utrecht, Netherlands,
+    (21/10/2021).
+
+    \item
+    \emph{Black hole dynamics in compact binaries beyond-general relativity},
+    seminar at Universit\"at T\"ubingen in T\"ubingen, Germany,
+    (30/06/2021).
+
+    \item
+    \emph{Black hole (de)scalarization in compact binaries},
+    seminar at Universidade de Aveiro in Aveiro, Portugal,
+    (09/06/2021).
+
+    \item
+    \emph{Escalariza{\c c}{\~a}o espont{\^a}nea de buracos negros},
+    virtual seminar at the
+    \href{https://sites.google.com/view/antoniodpj/gravbr}{GravBR} webinar,
+    (27/05/2021).
+
+    \item
+    \emph{Spontaneous black hole scalarization},
+    at the Perimeter Institute for Theoretical Physics,
+    in Waterloo, Canada (11/02/2020).
+
+    \item
+    \emph{Exploring the strong-field regime of gravity with neutron stars},
+    vertial seminar at the Latin American Webinars on Physics (09/12/2020).
+
+    \item
+    \emph{Spontaneous black hole scalarization},
+    at Yukawa Institute for Theoretical Physics, Kyoto University,
+    in Kyoto, Japan (03/12/2020).
+
+    \item
+    \emph{Probing fundamental physics with neutron stars},
+    at the Instituto Superior T\'ecnico
+    in Lisbon, Portugal (26/11/2020).
+
+    \item
+    \emph{Neutron stars: equation of state and gravitational theory},
+    at the Nuclear Physics Journal Club, USA (2020).
+
+    \item
+    \emph{Neutron stars as laboratories for fundamental physics},
+    departmental colloquium at \emph{Kent State University}
+    in Ohio, USA (2020).
+
+    \item
+    \emph{Probing extreme gravity with NICER},
+    talk at the \emph{APS April Meeting 2019}
+    in Denver, USA (2019).
+
+    \item
+    \emph{Scalar fields and strong-field gravity},
+    talk at the Institut d'Astrophysique de Paris, France (2019).
+
+	\item
+    \emph{Scalar fields and strong-field gravity: spontaneous scalarization of compact objects},
+    talk at the Kavli Institute for Cosmological Physics, University of Chicago, USA (2019).
+
+	\item
+    \emph{Illuminating the strong-field regime of gravity},
+    talk at the National Astronomical Observatory of Japan, Japan (2018).
+
+    \item
+    \emph{A f\'isica extrema das estrelas de n\^eutrons},
+    talk at Universidade Federal do Par\'a, Brazil (2018).
+
+    \item
+    \emph{Estrelas de n\^eutrons: laborat\'orios celestes para f\'isica fundamental},
+    talk at Universidade Federal do Par\'a, Brazil (2018).
+
+    \item
+    \emph{Probing the strong-field regime of gravity with neutrons stars},
+    talk at Montana State University, USA (2017).
+
+    \item
+    \emph{Neutron stars in scalar-tensor theories of gravity},
+    talk at Universidade de Aveiro
+    in Aveiro, Portugal (2016).
+
+    \item
+    \emph{Neutron stars in scalar-tensor theories of gravity},
+    talk at Instituto Superior T\'ecnico
+    in Lisbon, Portugal (2016).
+
+    \item
+    \emph{Neutron stars in scalar-tensor theories of gravity},
+    talk at Universidade de Lisboa
+    in Lisbon, Portugal (2016).
+
+    \item
+    \emph{Neutron stars as strong gravity probes},
+    talk at Mississippi State University's Journal Club
+    in Starkville, USA (2015).
+% \end{bibenum}
+\end{etaremune}
+
+\section{Contributed and other \\talks}
+%\restartlist{bibenum}
+%\begin{bibenum}
+\begin{etaremune}[topsep=0pt,partopsep=0pt]
+    \item \emph{The ringing of a different bell: quasinormal modes and their excitation beyond general relativity},
+    contributed talk at APS Global Physics Summit,
+    Denver, USA
+    \hfill (18/03/2026).
 
     \item \emph{Testing general relativity in the nonlinear regime with black-hole binaries},
     seminar at the Astrophysics, Gravitation, and Cosmology Seminar, University of Illinois, Urbana, USA
     \hfill (30/11/2022).
 
     \item
-    \emph{Testing general relativity in the nonlinear regime with black-hole binaries},
-    \invited{} seminar at the Princeton Gravity Initiative, Princeton University, Princeton, USA,
-    (14/11/2022).
-
-    \item
-    \emph{Testing general relativity in the nonlinear regime with black-hole binaries},
-    \invited{} seminar at Universidad Nacional Aut\'onoma de M\'exico, Ciudad de M\'exico, M\'exico,
-    (27/10/2022).
-
-    \item
-    \emph{Testing general relativity in the merger-ringdown phase of binary black hole coalescenses},
-    \invited{} talk at the workshop \href{https://sites.google.com/view/fundamental-aspects-of-gravity}{``Fundamental aspects of gravity''}, Imperial College London, United Kingdom,
-    (11/08/2022).
-
-    \item
     \emph{Binary black hole coalescence in scalar-Gauss-Bonnet gravity},
     talk at the workshop \href{https://sites.google.com/view/fundamental-aspects-of-gravity}{``Frontiers in Numerical Relativity''}, Friedrich-Schiller Universit\"at Jena, Germany, (29/07/2022).
-
-    \item
-    \emph{Binary black hole coalescence in scalar-Gauss-Bonnet gravity},
-    \invited{} talk at International Centre for Theoretical Physics Asia-Pacific,
-    China
-    (02/06/2022).
-
-    \item
-    \emph{Probing strong-field gravity with multimessenger neutron star observations},
-    \invited{} talk at Le Laboratoire Univers et Th\'eories (LUTH), l'Observatoire de Paris and Universit\'e Paris Cit\'e,
-    France
-    (07/04/2022).
 
     \item
     \emph{Probing gravitational parity violation with compact binaries},
     at the \href{https://heidelberg22.dpg-tagungen.de/}{``DPG-Fr\"uhjahrstagung''},
     (21/03/2022).
-
-    \item
-    \emph{Tests of general relativity with isolated neutron stars},
-    \invited{} talk for the online workshop \href{https://honghui-liu.github.io/gravity-test/}{``Recent progress on gravity tests''},
-    (16/02/2022).
-
-    \item
-    \emph{Multi-messenger tests of strong-field gravity
-    with neutron stars},
-    \invited{} seminar at Universiteit Utrecht in Utrecht, Netherlands,
-    (21/10/2021).
-
-    \item
-    \emph{Black hole dynamics in compact binaries beyond-general relativity},
-    \invited{} seminar at Universit\"at T\"ubingen in T\"ubingen, Germany,
-    (30/06/2021).
-
-    \item
-    \emph{Black hole (de)scalarization in compact binaries},
-    \invited{} seminar at Universidade de Aveiro in Aveiro, Portugal,
-    (09/06/2021).
-
-    \item
-    \emph{Escalariza{\c c}{\~a}o espont{\^a}nea de buracos negros},
-    \invited{} seminar at \href{https://sites.google.com/view/antoniodpj/gravbr}{GravBR} webinar, (27/05/2021).
-
-    \item
-    \emph{Spontaneous black hole scalarization},
-    \invited{} at Perimeter Institute for Theoretical Physics,
-    in Waterloo, Canada (11/02/2020).
-
-    \item
-    \emph{Exploring the strong-field regime of gravity with neutron stars},
-    \invited{} webinar for the Latin American Webinars on Physics (09/12/2020).
-
-    \item
-    \emph{Spontaneous black hole scalarization},
-    \invited{} at Yukawa Institute for Theoretical Physics, Kyoto University,
-    in Kyoto, Japan (03/12/2020).
-
-    \item
-    \emph{Probing fundamental physics with neutron stars},
-    \invited{} at the Instituto Superior T\'ecnico
-    in Lisbon, Portugal (26/11/2020).
-
-    \item
-    \emph{Neutron stars: equation of state and gravitational theory},
-    \invited{} at the Nuclear Physics Journal Club, USA (2020).
-
-    \item
-    \emph{Neutron stars as laboratories for fundamental physics},
-    \invited{} departmental colloquium at \emph{Kent State University}
-    in Ohio, USA (2020).
 
     \item
     \emph{Scalar fields and compact objects}
@@ -1261,188 +1424,139 @@ Some of my work has been featured in media and press:
 
     \item
     \emph{Probing extreme gravity with x-ray burst oscillations}
-    at the \emph{GR22/Amaldi13 Conference}
+    at the GR22/Amaldi13 Conference
     in Valencia, Spain (2019).
 
     \item
     \emph{Spontaneous black hole scalarization}
-    at the \emph{GR22/Amaldi13 Conference}
+    at the GR22/Amaldi13 Conference
     in Valencia, Spain (2019).
 
     \item
     \emph{Parametrized tests of gravity: from stellar structure to gravitational waves}
-    at the \emph{GR22/Amaldi13 Conference}
+    at the GR22/Amaldi13 Conference
     in Valencia, Spain (2019).
-
-    \item
-    \emph{Probing extreme gravity with NICER},
-    \invited{} talk at the \emph{APS April Meeting 2019}
-    in Denver, USA (2019).
 
     \item
     \emph{The shape of rotating neutron stars and systematic errors
           in pulse profile observations parameter estimation}
-    at the \emph{APS April Meeting 2019}
+    at the APS April Meeting 2019
     in Denver, USA (2019).
 
     \item
     \emph{Scalar fields and strong-field gravity},
-    \invited{} talk at the Institut d'Astrophysique de Paris, France (2019).
-
-    \item
-    \emph{Scalar fields and strong-field gravity},
-    talk at \emph{RelAstro} at Montana State University, USA (2018).
-
-	\item
-    \emph{Scalar fields and strong-field gravity: spontaneous scalarization of compact objects},
-    \invited{} talk at the Kavli Institute for Cosmological Physics, University of Chicago, USA (2019).
+    talk at RelAstro at Montana State University, USA (2018).
 
     \item
     \emph{Illuminating the strong-field regime of gravity},
-    talk at \emph{RelAstro} at Montana State University, USA (2018).
-
-	\item
-    \emph{Illuminating the strong-field regime of gravity},
-    \invited{} talk at the National Astronomical Observatory of Japan, Japan (2018).
-
-    \item
-    \emph{A f\'isica extrema das estrelas de n\^eutrons},
-    \invited{} talk at Universidade Federal do Par\'a, Brazil (2018).
-
-    \item
-    \emph{Estrelas de n\^eutrons: laborat\'orios celestes para f\'isica fundamental},
-    \invited{} talk at Universidade Federal do Par\'a, Brazil (2018).
+    talk at RelAstro at Montana State University, USA (2018).
 
     \item
     \emph{I-Love-Q to the extreme},
-    talk at \emph{RelAstro} at Montana State University, USA (2018).
+    talk at RelAstro at Montana State University, USA (2018).
 
     \item
     \emph{Neutron star masses: from astro to fundamental physics},
-    talk at \emph{RelAstro} at Montana State University, USA (2017).
-
-    \item
-    \emph{Probing the strong-field regime of gravity with neutrons stars},
-    \invited{} talk at Montana State University, USA (2017).
+    talk at RelAstro at Montana State University, USA (2017).
 
     \item
     \emph{Appplications of the post-Tolman-Oppenheimer-Volkoff formalism},
-    at the \emph{APS April Meeting 2017}
+    at the APS April Meeting 2017
     in Washington DC, USA (2017).
 
     \item
     \emph{Relativistic stars in scalar-tensor theories with disformal coupling},
-    at the \emph{APS April Meeting 2017}
+    at the APS April Meeting 2017
     in Washington DC, USA (2017).
 
     \item
     \emph{Confronting scalar-tensor theories of gravity
     against binary-pulsar observations},
-    at the \emph{II Physics Graduate Student Research Symposium}
+    at the II Physics Graduate Student Research Symposium
     in Oxford, USA (2016).
 
     \item
-    \emph{Neutron stars in scalar-tensor theories of gravity},
-    \invited{} talk at Universidade de Lisboa
-    in Lisbon, Portugal (2016).
-
-    \item
-    \emph{Neutron stars in scalar-tensor theories of gravity},
-    \invited{} talk at Universidade de Aveiro
-    in Aveiro, Portugal (2016).
-
-    \item
-    \emph{Neutron stars in scalar-tensor theories of gravity},
-    \invited{} talk at Instituto Superior T\'ecnico
-    in Lisbon, Portugal (2016).
-
-    \item
     \emph{Low-mass neutron stars: universal relations, the nuclear symmetry energy and gravitational radiation}
-    at the {APS April Meeting},
+    at the APS April Meeting,
     in Salt Lake City, USA (2016).
 
     \item
-    \emph{Neutron stars as strong gravity probes},
-    \invited{} talk at Mississippi State University's Journal Club
-    in Starkville, USA (2015).
-
-    \item
     \emph{Slowly rotating black hole solutions in Horndeski gravity},
-    at the \emph{III Amazonian Symposium on Physics and V NRHEP Network Meeting}
+    at the III Amazonian Symposium on Physics and V NRHEP Network Meeting
     in Bel\'em, Brazil (2015).
 
     \item
     \emph{Testing general relativity with neutron stars: a new
     parametrized formalism},
-    at the \emph{UM Research Day}
+    at the UM Research Day
     in Oxford, USA (2015).
 
     \item
     \emph{No-hair theorems in Horndeski gravity},
-    at the \emph{Physics Graduate Student Research Symposium}
+    at the Physics Graduate Student Research Symposium
     in Oxford, USA (2015).
 
     \item
     \emph{A post-TOV formalism for relativistic stars},
-    at the \emph{IV NRHEP Network Meeting}
+    at the IV NRHEP Network Meeting
     in Rome, Italy (2015).
 
     \item
     \emph{Tests of strong gravity with neutron star},
-    at the \emph{(Non-)universal properties of neutron stars}
+    at the ``(Non-)universal properties of neutron stars'' workshop
     in Bremen, Germany (2015).
 
     \item
     \emph{A post-TOV formalism for relativistic stars},
-    at the \emph{8th Gulf Coast Gravity Meeting}
+    at the 8th Gulf Coast Gravity Meeting
     in Gainesville, USA (2015).
 
     \item
     \emph{Dynamical Casimir effect without moving mirrors},
-    at the \emph{V Week of the Federal University of Par\'a Graduate Program in Physics}
+    at the V Week of the Federal University of Par\'a Graduate Program in Physics
     in Bel\'em, Brazil (2010).
 
     \item
     \emph{Zeta Functions and the Casimir effect},
-    at the \emph{IV Week of the Federal University of Par\'a Graduate Program in Physics}
+    at the IV Week of the Federal University of Par\'a Graduate Program in Physics
     in Bel\'em, Brazil (2009).
 
     \item
     \emph{Schwinger's method for calculating non-relativistic
     propagators in quantum mechanics},
-    at the \emph{Journal Club}
+    at the Journal Club
     in Bel\'em, Brazil (2009).
 
     \item
     \emph{Quantum vacuum effects},
-    at the \emph{Physics Freshman Week of Federal University of Par\'a}
+    at the Physics Freshman Week of Federal University of Par\'a
     in Bel\'em, Brazil (2008).
 
     \item
     \emph{Quantum field theory in spaces with boundaries
     with emphasis on the dynamical Casimir effect},
-    at the \emph{XIV Seminar of Undergraduate Research of
-    Federal University of Par\'a}
+    at the XIV Seminar of Undergraduate Research of
+    Federal University of Par\'a
     in Bel\'em, Brazil (2008).
 
     \item
     \emph{Quantum field theory in spaces of boundaries},
-    at the \emph{XVIII Seminar of Undergraduate Research of
-    Federal University of Par\'a}
+    at the XVIII Seminar of Undergraduate Research of
+    Federal University of Par\'a
     in Bel\'em, Brazil (2007).
 
     \item
     \emph{Quantum field theory in the presence of boundaries},
-    at the \emph{XVII Seminar of Undergraduate Research of
-    Federal University of Par\'a}
+    at the XVII Seminar of Undergraduate Research of
+    Federal University of Par\'a
     in Bel\'em, Brazil (2006).
-\end{bibenum}
+% \end{bibenum}
+\end{etaremune}
 
 \section{Conference Posters}
-\restartlist{bibenum}
-
-\begin{bibenum}
-
+% \restartlist{bibenum}
+% \begin{bibenum}
+\begin{etaremune}[topsep=0pt,partopsep=0pt]
     \item K. Glampedakis, G. Pappas, H. O. Silva and E. Berti,
     \emph{A post-TOV formalism for relativistic stars},
     at the \emph{Compact Objects as Astrophysical and Gravitational Probes}
@@ -1486,130 +1600,82 @@ Some of my work has been featured in media and press:
     particle in an infinite potential well in a discrete spacetime},
     at the \emph{V Undergraduate Research Journey of the Program of
     Tutorial Education of Par\'a} in Bel\'em, Brazil (2009).
+% \end{bibenum}
+\end{etaremune}
 
-\end{bibenum}
 
-\blankline
+\section{Mentoring/\\ Supervision}
+\textbf{Graduate students}
+\begin{etaremune}[]
+        \item \textbf{Sagnik Saha}
+        \hfill 2024--present \\
+        University of Illinois Urbana-Champaign, USA.
 
-\section{Visits}
-\restartlist{bibenum}
+		\item \textbf{Patrizio Di Lorenzo}
+        \hfill 2025--present \\
+        University of Illinois Urbana-Champaign, USA.
 
-Long (more than a week) scientific visits:
+        \item \textbf{Spyridon Thomopoulos}
+        \hfill 2025--present \\
+        University of Illinois Urbana-Champaign, USA.
+
+        \item \textbf{Jiayi Zhang}
+        \hfill 2025--present \\
+        University of Illinois Urbana-Champaign, USA.
+\end{etaremune}
+
+\textbf{Undergraduate students}
+\begin{etaremune}[]
+        \item \textbf{Yuna Shin}
+        \hfill 2026--present \\
+        University of Illinois Urbana-Champaign, USA.
+\end{etaremune}
 
 \halfblankline
 
-% \begin{bibsection}
-\begin{bibenum}
+\textbf{Former co-supervisions}
 
-	\item \href{https://www.nao.ac.jp/en/}{\textbf{National Astronomical Observatory of Japan}}
-	\hfill{September -- October 2018}\\
-	Visited the Division of Theoretical Astronomy of the National Astronomical Observatory of Japan
-    and collaborated with Hajime Sotani. Visit resulted in the publication~\ref{itm:pp_fs}.\\
-	Host: \href{http://inspirehep.net/author/profile/H.Sotani.1}{Hajime Sotani}.
-
-	\item \href{http://www.ufpa.br}{\textbf{Universidade Federal do Par\'a}}
-    \hfill{June 2018}\\
-        Visited the Departamento de F\'isica and the Faculdade de Ci\^encias of the Universidade Federal do
-        Par\'a, Bel\'em and Salin\'opolis campuses. \\
-        Hosts: \href{http://inspirehep.net/author/profile/L.C.B.Crispino.1}{Luis C. B. Crispino} and
-        \href{https://caiomacedo.weebly.com/}{Caio F. B. Macedo}
-
-    \item \href{http://www.nottingham.ac.uk}{\textbf{University of Nottingham}}
-    \hfill{May -- July 2017}\\
-        Visited the University of Nottingham and collaborated with
-        Prof. Thomas P. Sotiriou. Collaboration resulted in
-        the publication~\ref{itm:edgb_sca}. \\
-        Host: \href{http://thomassotiriou.wixsite.com/challenginggr}{Thomas P. Sotiriou}.
-
-    \item \href{tecnico.ulisboa.pt}{\textbf{Instituto Superior T\'ecnico}}
-    \hfill{April -- July 2016}\\
-        Visited the Gravitation at T\'ecnico
-        (\href{http://centra.tecnico.ulisboa.pt/network/grit/about/}{GRIT})
-        group, led by Prof. Vitor Cardoso. Collaboration resulted in the
-        publications \ref{itm:disformal} and \ref{itm:astroptov}.\\
-        Host: \href{http://centra.ist.utl.pt/~vitor/}{Vitor Cardoso}.
-
-    \item \href{tecnico.ulisboa.pt}{\textbf{Instituto Superior T\'ecnico}}
-    \hfill{May -- July 2015}\\
-        Visited the Gravitation at T\'ecnico
-        (\href{http://centra.tecnico.ulisboa.pt/network/grit/about/}{GRIT})
-        group, led by Prof. Vitor Cardoso. Collaboration resulted in the
-        publication \ref{itm:horndeski}.\\
-        Host: \href{http://centra.ist.utl.pt/~vitor/}{Vitor Cardoso}.
-
-    \item \href{www.ufrj.br}{\textbf{Federal University of Rio de Janeiro}}
-    \hfill{January -- July 2010}\\
-        I was an exchange student visiting the
-        \href{http://www.if.ufrj.br}{Physics Institute}.
-        I attended a graduate level special topics course on quantum vacuum
-        effects. Collaboration with the group of Prof. Carlos Farina
-        resulted in the publication \ref{itm:robintd}. \\
-        Host: \href{http://www.if.ufrj.br/docentes/carlos-farina-de-souza/}
-        {Carlos Farina}. \\
-\end{bibenum}
-
-\section{Mentoring}
-\restartlist{bibenum}
-
-\textbf{Current}: \\ \halfblankline
-
-\begin{bibenum}
-		\item \textbf{Sagnik Saha}\\
-        Graduate student in physics, University of Illinois Urbana-Champaign, USA. \\
-        Period: 2024--ongoing.
-		\item \textbf{Patrizio Di Lorenzo}\\
-        Graduate student in physics, University of Illinois Urbana-Champaign, USA. \\
-        Period: 2025--ongoing.
-		\item \textbf{Spyros Thomopoulos}\\
-        Graduate student in physics, University of Illinois Urbana-Champaign, USA. \\
-        Period: 2025--ongoing.
-		\item \textbf{Jiayi Zhang}\\
-        Graduate student in physics, University of Illinois Urbana-Champaign, USA. \\
-        Period: 2025--ongoing.
-\end{bibenum}
-
-\blankline
-
-\textbf{Previous}: \\ \halfblankline
-
-\begin{bibenum}
-		\item \textbf{Reagan Cox}\\
+% \begin{bibenum}
+\begin{etaremune}[]
+	\item \textbf{Reagan Cox}
+        \hfill 2017--2019 \\
         Undergraduate student in physics, Montana State University, USA. \\
-        Project: \emph{Neutron stars in massive scalar-tensor gravity}. \\
-        Primary advisor: Nicol\'as Yunes. \\
-        Period: 2017--2019.
+        Project:~\emph{Neutron stars in massive scalar-tensor gravity}. \\
+        Primary advisor: Nicol\'as Yunes.
 
-    \item \textbf{Tan\'isia de F\'atima de Moraes Cardoso}\\
+    \item \textbf{Tan\'isia de F\'atima de Moraes Cardoso}
+        \hfill 2009--2010 \\
         Undergraduate student in physics, Federal University of Par\'a, Brazil. \\
-        Project: \emph{Path integrals in quantum mechanics}. \\
-        Primary advisor: Silvana Perez. \\
-        Period: 2009--2010.
+        Project:~\emph{Path integrals in quantum mechanics}. \\
+        Primary advisor: Silvana Perez.
 
-    \item \textbf{Jocivaldo Siqueira da Silva J\'unior}\\
+    \item \textbf{Jocivaldo Siqueira da Silva J\'unior}
+        \hfill 2009--2011 \\
         Undergraduate student in physics, Federal University of Par\'a, Brazil. \\
-        Project: \emph{Casimir Effect: static and dynamical}. \\
-        Primary advisor: Danilo T. Alves. \\
-        Period: 2009--2011.
+        Project:~\emph{Casimir effect: static and dynamical}. \\
+        Primary advisor: Danilo T. Alves.
 
-    \item \textbf{Monique Val\'erio Silva}\\
+    \item \textbf{Monique Val\'erio Silva}
+        \hfill 2009 \\
         High-school student, Federal University of Par\'a, Brazil \\
-        Project: \emph{Studies on mechanics in high-school with the aid of computational techniques}. \\
-        Primary advisor: Luis Carlos Bassalo Crispino. \\
-        Period: 2009.
-\end{bibenum}
-
-\halfblankline
+        Project:~\emph{Studies on mechanics in high-school with the aid of
+        computational techniques}. \\
+        Primary advisor: Luis Carlos Bassalo Crispino.
+\end{etaremune}
+% \end{bibenum}
 
 \section{Teaching Experience}
 
-\href{http://illinois.edu}{\textbf{University of Illinois Urbana-Champaign}}, Urbana, IL, USA
+\href{http://illinois.edu}{\textbf{University of Illinois Urbana-Champaign}}
+% , Urbana, IL, USA
 
 \begin{itemize}
     \item (Fall 2025, 2026) PHYS 325: Classical Mechanics I.
     \item (Spring 2025) PHYS 516: General Relativity II.
 \end{itemize}
 
-\href{http://www.aei.mpg.de}{\textbf{Max Planck Institute for Gravitational Physics (Albert Einstein Institute)}}, Potsdam, Germany
+\href{http://www.aei.mpg.de}{\textbf{Max Planck Institute for Gravitational Physics (Albert Einstein Institute)}}
+%, Potsdam, Germany
 
 \begin{itemize}
     \item In 2022 and 2024, I was an invited lecturer for Prof. Alessandra Buonanno's course ``Gravitational Waves'' in the
@@ -1624,26 +1690,25 @@ Long (more than a week) scientific visits:
     Instructor: \href{https://www.aei.mpg.de/alessandra-buonanno}{Alessandra Buonanno} \hfill{December 2022 and December 2024}
 \end{itemize}
 
-\href{http://www.olemiss.edu/}{\textbf{University of Mississippi}},
-Oxford, MS, USA
+\href{http://www.olemiss.edu/}{\textbf{University of Mississippi}}
+% Oxford, MS, USA
 \begin{outerlist}
-
-\item[] \textit{Grader}%
-        \hfill{August -- December 2015}
+\item[] Grader
+        \hfill{August 2015--December 2015}
 \begin{innerlist}
 \item Graded assignments for graduate level course in general
 relativity (PHYS~729).
 \item Main instructor: \href{http://www.phy.olemiss.edu/~luca/}{Luca Bombelli}.
 \end{innerlist}
 
-\item[] \textit{Grader}%
-        \hfill{August -- December 2015}
+\item[] Grader
+        \hfill{August 2015--December 2015}
 \begin{innerlist}
 \item Graded assignments for introductory astronomy class (ASTR~103).
 \item Main instructor: James Hill.
 \end{innerlist}
 
-\item[] \textit{Teaching Assistant} \hfill{August 2012 -- July 2014}
+\item[] Teaching Assistant \hfill{August 2012--July 2014}
     \begin{innerlist}
         \item PHYS~221 and 222: Laboratory Physics for Science and Engineering.
         \begin{innerlist}
@@ -1664,58 +1729,133 @@ relativity (PHYS~729).
 
 \section{Professional Service}
 
-\textbf{Referee} \\
+\textbf{Referee}
+
 I have served as a referee for the following funding agencies:
 %
-\begin{innerlist}
+\begin{itemize}
     \item Swiss National Science Foundation.
     \item UK Research and Innovation.
-\end{innerlist}
-\blankline
-
-I have also served as a referee for the following scientific journals [where ($n$)
-indicates the number of refereed manuscripts]:
-\blankline
-\vspace{0.25cm}
-\begin{innerlist}
-    \item \emph{Physical Review D} \dotfill\, (16),
-    \item \emph{International Journal of Modern Physics D} \dotfill\, (3),
-    \item \emph{General Relativity and Gravitation} \dotfill\, (4),
-    \item \emph{Classical and Quantum Gravity} \dotfill\, (3),
-    \item \emph{The Astrophysical Journal} \dotfill\, (3),
-    \item \emph{Monthly Notices of the Royal Astronomical Society} \dotfill\, (2),
-    \item \emph{Physical Review Letters} \dotfill\, (2),
-    \item \emph{Universe} \dotfill\, (2),
-    \item \emph{Journal of High Energy Physics} \dotfill\, (2),
-    \item \emph{Journal of Cosmology and Astroparticle Physics} \dotfill\, (2),
-    \item \emph{Acta Polytechnica} \dotfill\, (1),
-    \item \emph{European Journal of Physics C} \dotfill\, (1),
-    \item \emph{International Journal of Modern Physics E} \dotfill\, (1),
-    \item \emph{Modern Physics Letters A} \dotfill\, (1),
-    \item \emph{Physics of the Dark Universe} \dotfill\, (1),
-    \item \emph{Physical Review E} \dotfill\, (1),
-    \item \emph{Physics} \dotfill\, (1),
-    \item \emph{Particles} \dotfill\, (1),
-\end{innerlist}
+\end{itemize}
 
 \blankline
 
-\textbf{Judging committees} \\
-I participated in the following undergraduate thesis defense:
-\restartlist{bibenum}
-\begin{bibenum}
-    \item {Tan\'isia de F\'atima de Moraes Cardoso}, \hfill{2010} \\
-        Undergraduate student in Physics, Federal University of Par\'a, \\
-        Title: \emph{Path integrals in quantum mechanics}.
-\end{bibenum}
+\quad I have also served as a referee for the following scientific journals:
+The Astrophysical Journal,
+Monthly Notices of the Royal Astronomical Society,
+Classical and Quantum Gravity,
+General Relativity and Gravitation,
+Physical Review Letters,
+Physical Review D,
+Physical Review E,
+Journal of High Energy Physics,
+Journal of Cosmology and Astroparticle Physics,
+European Journal of Physics C,
+International Journal of Modern Physics D,
+International Journal of Modern Physics E,
+Modern Physics Letters A,
+Physics of the Dark Universe,
+Acta Polytechnica,
+Physics,
+Particles,
+Universe.
+% [where ($n$) indicates the number of refereed manuscripts]:
+% \blankline
+% \vspace{0.25cm}
+% \begin{innerlist}
+%     \item \emph{Physical Review D} \dotfill\, (16),
+%     \item \emph{International Journal of Modern Physics D} \dotfill\, (3),
+%     \item \emph{General Relativity and Gravitation} \dotfill\, (4),
+%     \item \emph{Classical and Quantum Gravity} \dotfill\, (3),
+%     \item \emph{The Astrophysical Journal} \dotfill\, (3),
+%     \item \emph{Monthly Notices of the Royal Astronomical Society} \dotfill\, (2),
+%     \item \emph{Physical Review Letters} \dotfill\, (2),
+%     \item \emph{Universe} \dotfill\, (2),
+%     \item \emph{Journal of High Energy Physics} \dotfill\, (2),
+%     \item \emph{Journal of Cosmology and Astroparticle Physics} \dotfill\, (2),
+%     \item \emph{Acta Polytechnica} \dotfill\, (1),
+%     \item \emph{European Journal of Physics C} \dotfill\, (1),
+%     \item \emph{International Journal of Modern Physics E} \dotfill\, (1),
+%     \item \emph{Modern Physics Letters A} \dotfill\, (1),
+%     \item \emph{Physics of the Dark Universe} \dotfill\, (1),
+%     \item \emph{Physical Review E} \dotfill\, (1),
+%     \item \emph{Physics} \dotfill\, (1),
+%     \item \emph{Particles} \dotfill\, (1),
+% \end{innerlist}
 
-\section{Institutional responsibilties}
-\begin{innerlist}
-    \item Member of the Executive Committee of the Illinois Center for Advanced Studies of the Universe since September 2024.
-    \item Co-organizer of the Astrophysical and Cosmological Relativity Department's weekly seminar between 08/2021 and 08/2023.
-    \item Co-organizer of the ``Tests of General Relativity'' meetings at the Albert Einstein Institute between 03/2021
-        and 09/2022.
-\end{innerlist}
+
+% \textbf{Judging committees} \\
+% I participated in the following undergraduate thesis defense:
+% % \restartlist{bibenum}
+% % \begin{bibenum}
+% \begin{enumerate}[partopsep=0pt,topsep=0pt]
+%     \item {Tan\'isia de F\'atima de Moraes Cardoso}, \hfill{2010} \\
+%         Undergraduate student in Physics, Federal University of Par\'a, \\
+%         Title: \emph{Path integrals in quantum mechanics}.
+% \end{enumerate}
+% \end{bibenum}
+
+\section{Institutional service}
+\textbf{American Physical Society}
+\begin{itemize}
+    \item Member of the Forum on International Physics (FIP) Distinguished Student Award Selection Committee \hfill 2026
+\end{itemize}
+
+\textbf{University of Illinois Urbana-Champaign}
+\begin{itemize}
+    \item Member of the Executive Committee of the Illinois Center for Advanced Studies of the Universe
+        \hfill September 2024--Present
+    \item Faculty mentor of the Society of Physics Students
+        \null\hfill August 2026--Present
+    \item Co-organizer of the Astrophysics, Relativity, and Cosmology (ARC) seminar series.
+        \null\hfill August 2025--May 2026
+    \item Member of the PhD program Qualifying Examination committee
+        \null\hfill 2026
+    \item Member or chair (${}^{*}$) of the Preliminary Examination committees of the graduate students:
+        \begin{etaremune}
+            \item ${}^{*}$Noora Ghadiri                      \hfill May 2026
+            \item ${}^{*}$Domenica Garzon Armendariz         \hfill December 2025
+            \item Carlos Conde Ocazionez                     \hfill October 2025
+        \end{etaremune}
+\end{itemize}
+
+\textbf{Max Planck Institute for Gravitational Physics \\ (Albert Einstein Institute)}
+\begin{itemize}
+        \item Co-organizer of the Astrophysical and Cosmological Relativity Department's weekly seminar \hfill August 2021--August 2023.
+        \item Co-organizer of the ``Tests of General Relativity'' meetings at the Albert Einstein Institute \hfill March 2021--September 2022.
+\end{itemize}
+
+\textbf{Federal University of Par\'a}
+\begin{itemize}
+    \item Member the undergraduate thesis defense committee:
+        \begin{etaremune}
+            \item Tan\'isia de F\'atima de Moraes Cardoso    \hfill 2010
+        \end{etaremune}
+\end{itemize}
+
+
+% \begin{innerlist}
+%     \item American Physical Society
+%     \begin{itemize}
+%         \item[-] Member of the Forum on International Physics (FIP) Distinguished Student Award Selection Committee
+%             \hfill 2026
+%     \end{itemize}
+%     \item University of Illinois Urbana-Champaign
+%     \begin{itemize}
+%         \item[-] Member of the Executive Committee of the Illinois Center for Advanced Studies of the Universe
+%             \hfill September 2024--Present
+%         \item[-] Faculty mentor of the Society of Physics Students
+%             \null\hfill August 2026--Present
+%         \item[-] Co-organizer of the Astrophysics, Relativity, and Cosmology (ARC) seminar series.
+%             \null\hfill August 2025--May 2026
+%         \item[-] Participation of the Preliminary Exam committees of ...
+%     \end{itemize}
+%     \item Max Planck Institute for Gravitational Physics (Albert Einstein Institute)
+%     \begin{itemize}
+%         \item[-] Co-organizer of the Astrophysical and Cosmological Relativity Department's weekly seminar \hfill August 2021--August 2023.
+%         \item[-] Co-organizer of the ``Tests of General Relativity'' meetings at the Albert Einstein Institute \hfill March 2021--September 2022.
+%     \end{itemize}
+% \end{innerlist}
 
 % \section{Professional Experience}
 
@@ -1882,28 +2022,21 @@ I participated in the following undergraduate thesis defense:
 
 \section{Membership in Scientific Societies}
 
-I am a member of the following organizations:
-%
-\begin{innerlist}
-\item \href{https://www.aps.org}{American Physical Society}.
-\item \href{http://www.sbfisica.org.br}{Sociedade Brasileira de F\'isica}.
-%     \begin{innerlist}
-%     \item \href{https://www.aps.org/units/dgrav/}{Division of Gravity}.
-%     \end{innerlist}
-% \item \href{http://www.sigmapisigma.org}{Sigma Pi Sigma}.
-\item \href{https://www.ufplp.org}{Uni\~{a}o dos F\'isicos dos Pa\'ises de L\'ingua Portuguesa}.
-\end{innerlist}
-
-\vspace{0.1in}
+I am a member of the following scientific organizations:
+\begin{itemize}
+    \item \href{https://www.aps.org}{American Physical Society}.
+    \item \href{http://www.sbfisica.org.br}{Sociedade Brasileira de F\'isica}
+    \item \href{https://www.ufplp.org}{Uni\~{a}o dos F\'isicos dos Pa\'ises de L\'ingua Portuguesa}.
+\end{itemize}
 
 \section{Outreach and Service}
 
 \href{https://twitter.com/arXiv_BR}
 {\textbf{arXiv.BR}}
-\hfill{2014 - 2024}
+\hfill{2014--2024}
 
 \begin{innerlist}
-    \item I maintained and ran the X (formerly Twitter) account arxiv\_br. The
+    \item I maintained and ran the X (formerly Twitter) account \texttt{arxiv\_br}. The
     account shared papers by Brazilian scientists (and foreigners at Brazilian institutions)
     which have been posted to the arXiv the gr-qc, astro-ph and hep-th sections.
     %
@@ -1917,27 +2050,29 @@ I am a member of the following organizations:
 
 \halfblankline
 
-% \href{https://hosilva.github.io/memoria/}{\textbf{Mem\'oria da F\'isica Brasileira}}
-% \hfill{Since March 2019}
-%
-% \begin{innerlist}
-%     \item I maintain and run the website \emph{Mem\'oria da F\'isica Brasileira} (Memory of the Brazilian
-%     Physics).
-%     %
-%     In this website I write biographies of Brazilian physicists and accounts on events in
-%     the history of physics in Brazil.
-%     %
-%     I also keep a database of material related on this topic.
-%     %
-%     Currently (April 2021) the project is in its early stages. The goal is to ultimately have a website
-%     in the style of the \href{http://www-history.mcs.st-and.ac.uk/}{MacTutor History of Mathematics archive}
-%     but focused on Brazilian physics.
-% \end{innerlist}
-%
-% \halfblankline
+\href{www.olemiss.edu}{\textbf{University of Mississippi}},
+        \hfill {April 2015--January 2016}\\
+            \href{http://dos.orgsync.com/org/pgsa}{Physics Graduate Student Association (PGSA)}
+
+\begin{innerlist}
+    \item I am a founding member of the PGSA at University of Mississippi.
+    PGSA's goal is to stimulate the interaction among physics students through
+    events and social activities. During the period from April 2015 to January 2016
+    I served as vice-president.
+\end{innerlist}
+
+\halfblankline
+
+\textbf{2015 MS Region VII Science Fair}
+\hfill {March 2015}
+\begin{innerlist}
+    \item Judge of the science fair projects in the ``Lower Fair'' session.
+\end{innerlist}
+
+\halfblankline
 
 \href{www.ufpa.br}{\textbf{Federal University of Par\'a}}
-\hfill {2009 -- 2011}\\
+\hfill {2009--2011}\\
 \textbf{Student representative}
 
 \begin{innerlist}
@@ -1947,35 +2082,13 @@ I am a member of the following organizations:
     students and participating in decisions concerning the graduate program.
 \end{innerlist}
 
-\halfblankline
-
-\textbf{2015 MS Region VII Science Fair}
-\hfill {March 2015}
-
-\begin{innerlist}
-    \item Judge of the science fair projects in the ``Lower Fair'' session.
-\end{innerlist}
-
-\halfblankline
-
-\href{www.olemiss.edu}{\textbf{University of Mississippi}},
-        \hfill {April 2015 -- January 2016}\\
-            \href{http://dos.orgsync.com/org/pgsa}{Physics Graduate Student Association (PGSA)}
-
-\begin{innerlist}
-    \item I am a founding member of the PGSA at University of Mississippi.
-    PGSA's goal is to estimulate the interaction among the physics student, through
-    events and social activities. During the period from April 2015 to January 2016
-    I served as vice-president.
-\end{innerlist}
-
-\vspace{0.1in}
+\blankline
 
 \section{Organization}
 
 \href{https://publish.illinois.edu/pax-xcesy/}
-{\textbf{10th Physics and Astrophysics at the eXtreme workshop\\and the 3rd Cosmic Explorer Symposium}},
-\hfill{June/July 2025}
+{\textbf{10th Physics and Astrophysics at the eXtreme workshop\\and the 3rd Cosmic Explorer Symposium}}
+\hfill{June--July 2025}
 
 \begin{innerlist}
     \item Key co-organizer of this four-day workshop June 30 to July 3, 2025.
@@ -1992,21 +2105,22 @@ I am a member of the following organizations:
 \halfblankline
 
 \href{https://publish.illinois.edu/efts-gravity-fluid-dynamics/}
-{\textbf{EFTs, Gravity, and Fluid Dynamics:\\ Progress, Challenges, and Emerging Opportunities Workshop}},
-\hfill{December 2024}
+{\textbf{EFTs, Gravity, and Fluid Dynamics:}}
+\hfill{December 2024} \\
+{\color{aeiblu}{\bf Progress, Challenges, and Emerging Opportunities Workshop}}
 
 \begin{innerlist}
     \item Co-organized with Patrick Draper, Jorge Noronha, and
         Helvi Witek. This three-day workshop gathered experts on
         effective field theory, gravity, and fluid dynamics to
         discuss and explore synergies at the intersection of these
-        three subjects.
+        three subjects. The meeting had 58 registered participants.
 \end{innerlist}
 
 \halfblankline
 
 \href{https://workshops.aei.mpg.de/connecting-the-dots/}
-{\textbf{Connecting the dots: Toward inspiral-merger-ringdown \\ gravitational waveforms beyond general relativity}},
+{\textbf{Connecting the dots: Toward inspiral-merger-ringdown \\ gravitational waveforms beyond general relativity}}
 \hfill{June 2023}
 
 \begin{innerlist}
@@ -2014,13 +2128,13 @@ I am a member of the following organizations:
         and Sebastian V\"olkel. This three-day workshop gathered experts on
         various aspects of gravitational-waveform modeling to discuss the
         status and challenges in developing inspiral-merger-ringdown waveforms
-        in extensions to general relativity.
+        in extensions to general relativity. The meeting had 52 registered participants.
 \end{innerlist}
 
 \halfblankline
 
 \href{http://www.ufpa.br/ppgf/ippgf.html}
-{\textbf{1st School of the Graduate Program in Physics \\ of the Federal University of Par\'a}},
+{\textbf{1st School of the Graduate Program in Physics \\ of the Federal University of Par\'a}}
 \hfill{January 2011}
 
 \begin{innerlist}
@@ -2036,7 +2150,7 @@ I am a member of the following organizations:
 \halfblankline
 
 \href{http://dos.orgsync.com/org/pgsa/ResearchSymposium2015}
-{\textbf{Physics Graduate Student Research Symposium}},
+{\textbf{Physics Graduate Student Research Symposium}}
 \hfill{September 2015}
 
 \begin{innerlist}
@@ -2048,7 +2162,7 @@ I am a member of the following organizations:
 \halfblankline
 
 \href{http://dos.orgsync.com/org/pgsa/UM_MSU_SYMP}
-{\textbf{1st Annual UM-MSU Joint Physics Research Symposium}},
+{\textbf{1st Annual UM-MSU Joint Physics Research Symposium}}
 \hfill{February 2016}
 
 \begin{innerlist}
@@ -2090,7 +2204,63 @@ I am a member of the following organizations:
 
 % \end{outerlist}
 
-\vspace{0.1in}
+\section{Visits}
+% \restartlist{bibenum}
+
+Long (more than a week) scientific visits:
+
+% \halfblankline
+
+% \begin{bibsection}
+% \begin{bibenum}
+\begin{enumerate}
+	\item \href{https://www.nao.ac.jp/en/}{\textbf{National Astronomical Observatory of Japan}}
+	\hfill{September--October 2018}\\
+	Visited the Division of Theoretical Astronomy of the National Astronomical Observatory of Japan
+    and collaborated with Hajime Sotani.~Visit resulted in the publication~[\ref{itm:pp_fs}].
+	Host:~\href{http://inspirehep.net/author/profile/H.Sotani.1}{Hajime Sotani}.
+
+	\item \href{http://www.ufpa.br}{\textbf{Universidade Federal do Par\'a}}
+    \hfill{June 2018}\\
+        Visited the Departamento de F\'isica and the Faculdade de Ci\^encias of the Universidade Federal do
+        Par\'a, Bel\'em and Salin\'opolis campuses.
+        Hosts:~\href{http://inspirehep.net/author/profile/L.C.B.Crispino.1}{Luis C. B. Crispino} and
+        \href{https://caiomacedo.weebly.com/}{Caio F. B. Macedo}
+
+    \item \href{http://www.nottingham.ac.uk}{\textbf{University of Nottingham}}
+    \hfill{May--July 2017}\\
+        Visited the University of Nottingham and collaborated with
+        Prof.~Thomas P. Sotiriou. Collaboration resulted in
+        the publication~[\ref{itm:edgb_sca}].
+        Host:~\href{http://thomassotiriou.wixsite.com/challenginggr}{Thomas P. Sotiriou}.
+
+    \item \href{tecnico.ulisboa.pt}{\textbf{Instituto Superior T\'ecnico}}
+    \hfill{April--July 2016}\\
+        Visited the Gravitation at T\'ecnico
+        (\href{http://centra.tecnico.ulisboa.pt/network/grit/about/}{GRIT})
+        group, led by Prof.~Vitor Cardoso. Collaboration resulted in the
+        publications~[\ref{itm:disformal}] and~[\ref{itm:astroptov}].
+        Host:~\href{http://centra.ist.utl.pt/~vitor/}{Vitor Cardoso}.
+
+    \item \href{tecnico.ulisboa.pt}{\textbf{Instituto Superior T\'ecnico}}
+    \hfill{May--July 2015}\\
+        Visited the Gravitation at T\'ecnico
+        (\href{http://centra.tecnico.ulisboa.pt/network/grit/about/}{GRIT})
+        group, led by Prof.~Vitor Cardoso. Collaboration resulted in the
+        publication~[\ref{itm:horndeski}].
+        Host:~\href{http://centra.ist.utl.pt/~vitor/}{Vitor Cardoso}.
+
+    \item \href{www.ufrj.br}{\textbf{Federal University of Rio de Janeiro}}
+    \hfill{January--July 2010}\\
+        I was an exchange student visiting the
+        \href{http://www.if.ufrj.br}{Physics Institute}.
+        I attended a graduate level special topics course on quantum vacuum
+        effects. Collaboration with the group of Prof.~Carlos Farina
+        resulted in the publication~[\ref{itm:robintd}].
+        Host:~\href{http://www.if.ufrj.br/docentes/carlos-farina-de-souza/}
+        {Carlos Farina}.
+\end{enumerate}
+% \end{bibenum}
 
 \section{Computational Skills}
 
@@ -2115,8 +2285,6 @@ Operating systems:
 \begin{innerlist}
     \item Microsoft Windows, Mac OSX and Linux.
 \end{innerlist}
-
-\blankline
 
 \section{Languages}
 
@@ -2358,8 +2526,6 @@ Portuguese (Native) and English (Fluent).
 % The ``More Info'' section may not be necessary; make sure it's short
 % so it doesn't prevent people from seeing references available to
 % contact.
-
-\blankline
 
 \section{More \\ Information}
 
